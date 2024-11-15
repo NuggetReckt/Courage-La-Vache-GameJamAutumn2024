@@ -28,4 +28,4 @@ func toggle_bucket() -> void:
 		empty_bucket.visible = false
 	
 func is_player(area: Area2D) -> bool:
-	return area.get_parent().name == "player"
+	return area.get_parent().name.contains("player")
