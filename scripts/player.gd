@@ -32,3 +32,6 @@ func die():
 	#faire un feedback de mort
 	queue_free()
 	pass
+
+func getId():
+	return id
