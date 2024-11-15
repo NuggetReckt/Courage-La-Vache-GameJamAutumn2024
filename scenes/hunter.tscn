@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://hpw6u7lu2wns"]
 
 [ext_resource type="Script" path="res://scripts/hunter.gd" id="1_hyoou"]
-[ext_resource type="Texture2D" uid="uid://cvgt1ocxfxwve" path="res://assets/masque_noir_halo.png" id="2_27dmy"]
+[ext_resource type="Texture2D" uid="uid://dxdrl7rqcusnj" path="res://assets/masque_noir_halo.png" id="2_27dmy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_myg1l"]
 radius = 41.0

@@ -10,4 +10,4 @@ position = Vector2(675, 419)
 id = 2
 
 [node name="hunter" parent="." instance=ExtResource("2_iwep6")]
-position = Vector2(320, 281)
+position = Vector2(328, 291)
