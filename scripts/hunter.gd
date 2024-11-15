@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
 @export var speed = 300.0
-@export var id : int
+@export var id : int = 1
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var area_2d: Area2D = $Area2D
 
 func _physics_process(delta: float) -> void:
 
-	if id == 1: return #tt sauf le hunter
+	if id != 1: return #au cas ou c pas le hunter mais pas possible
 
 	#Movement globals
 	var input_vector : Vector2 = Vector2.ZERO
@@ -19,16 +20,16 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.y = move_toward(velocity.y, 0, speed)
 	
-	if(Input.is_action_pressed(str(id) + "_reveal")):
-		print("revealing")
-		z_index = 1
-	else:
-		z_index = -1
-	
 	move_and_slide()
+	
+	if(Input.is_action_just_pressed("1_find")):
+		_find()
 
 
-func die():
-	#faire un feedback de mort
-	queue_free()
-	pass
+func _find():
+	print("finding...")
+	for area in area_2d.get_overlapping_areas():
+		if(area.get_parent().name.contains("player")):
+			print("found player")
+			area.get_parent().die()
+			pass
