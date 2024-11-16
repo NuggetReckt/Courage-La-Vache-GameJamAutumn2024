@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://hpw6u7lu2wns"]
 
 [ext_resource type="Script" path="res://scripts/hunter.gd" id="1_hyoou"]
-[ext_resource type="Texture2D" uid="uid://dsefkdwytxseg" path="res://assets/masque_noir_halo.png" id="2_55hv8"]
+[ext_resource type="Texture2D" uid="uid://bh3iawx7415vt" path="res://assets/masque_noir_halo_tuto.png" id="2_idocs"]
 [ext_resource type="Texture2D" uid="uid://cdosbj5bc4eq2" path="res://assets/crosshair/crosshair_blue.png" id="2_ovvgx"]
 [ext_resource type="Texture2D" uid="uid://bk51hirrr405h" path="res://assets/crosshair/crosshair_missed.png" id="4_2dho1"]
 
@@ -34,9 +34,9 @@ shape = SubResource("CircleShape2D_bhai5")
 
 [node name="MasqueNoirHaloPetit" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(222, -191)
+position = Vector2(241, -115)
 scale = Vector2(2, 2)
-texture = ExtResource("2_55hv8")
+texture = ExtResource("2_idocs")
 
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 2.5
