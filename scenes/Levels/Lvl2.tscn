@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=3 uid="uid://dm86xrqe2sx73"]
+
+[ext_resource type="PackedScene" uid="uid://btmixqkw76nko" path="res://scenes/GenTest/MurVertical.tscn" id="1_2ql7a"]
+[ext_resource type="PackedScene" uid="uid://b4h1lkpwl4hrs" path="res://scenes/GenTest/MurHorizontal.tscn" id="2_2nxib"]
+[ext_resource type="PackedScene" uid="uid://dvbdupvebwhq5" path="res://scenes/GenTest/MapSpawn.tscn" id="3_srndc"]
+[ext_resource type="PackedScene" uid="uid://bmx4akp13eyvn" path="res://scenes/generator.tscn" id="4_817ap"]
+[ext_resource type="PackedScene" uid="uid://hpw6u7lu2wns" path="res://scenes/hunter.tscn" id="5_0ej2x"]
+[ext_resource type="Texture2D" uid="uid://dt7br5moencsg" path="res://assets/ground.png" id="6_weiu3"]
+[ext_resource type="PackedScene" uid="uid://dax08101yn5p7" path="res://scenes/player.tscn" id="7_2y2pk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_msbio"]
+size = Vector2(50, 1121)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8m07d"]
+size = Vector2(1814, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2s235"]
+size = Vector2(59, 1119)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnap8"]
+size = Vector2(1874, 73)
+
+[node name="Lvl1" type="Node2D"]
+
+[node name="MurVertical" parent="." instance=ExtResource("1_2ql7a")]
+position = Vector2(612, 729)
+
+[node name="MurVertical2" parent="." instance=ExtResource("1_2ql7a")]
+position = Vector2(1041, 919)
+
+[node name="MurHorizontal" parent="." instance=ExtResource("2_2nxib")]
+position = Vector2(1574, 380)
+
+[node name="MurHorizontal2" parent="." instance=ExtResource("2_2nxib")]
+position = Vector2(1816, 380)
+
+[node name="MurHorizontal3" parent="." instance=ExtResource("2_2nxib")]
+position = Vector2(123, 318)
+
+[node name="MurHorizontal4" parent="." instance=ExtResource("2_2nxib")]
+position = Vector2(1172, 787)
+
+[node name="MurHorizontal5" parent="." instance=ExtResource("2_2nxib")]
+position = Vector2(1419, 787)
+
+[node name="VacheSpawn" parent="." instance=ExtResource("3_srndc")]
+
+[node name="generator" parent="." instance=ExtResource("4_817ap")]
+position = Vector2(1069, 842)
+
+[node name="generator2" parent="." instance=ExtResource("4_817ap")]
+position = Vector2(1620, 54)
+
+[node name="generator3" parent="." instance=ExtResource("4_817ap")]
+position = Vector2(29, 6)
+
+[node name="generator4" parent="." instance=ExtResource("4_817ap")]
+position = Vector2(359, 624)
+
+[node name="hunter" parent="." instance=ExtResource("5_0ej2x")]
+visible = false
+position = Vector2(1000, 560)
+
+[node name="Ground" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(967, 534)
+scale = Vector2(2.55, 2.55)
+texture = ExtResource("6_weiu3")
+
+[node name="player" parent="." instance=ExtResource("7_2y2pk")]
+position = Vector2(180, 229)
+id = 2
+
+[node name="player2" parent="." instance=ExtResource("7_2y2pk")]
+position = Vector2(862, 197)
+id = 3
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(959, 538)
+
+[node name="walls" type="StaticBody2D" parent="."]
+position = Vector2(370, 235)
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
+position = Vector2(-336, 270)
+shape = SubResource("RectangleShape2D_msbio")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls"]
+position = Vector2(577, -261)
+shape = SubResource("RectangleShape2D_8m07d")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="walls"]
+position = Vector2(1510.5, 266.5)
+shape = SubResource("RectangleShape2D_2s235")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="walls"]
+position = Vector2(600, 854)
+shape = SubResource("RectangleShape2D_cnap8")
