@@ -33,7 +33,6 @@ func _process(delta):
 			if i==j :
 				continue
 			while i.find_child("Area2D").overlaps_area(j.find_child("Area2D")):
-				print(j.name)
 				remove_child(i)
 				i.position = Vector2(randi()%1750 + 50,randi()%950 + 50)
 				add_child(i)
