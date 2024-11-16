@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 @export var speed = 300.0
 @export var id : int = 1
-@onready var sprite: Sprite2D = $MasqueNoirHaloJaune
 @onready var area_2d: Area2D = $Area2D
-@onready var filter: Sprite2D = $filter
+#@onready var filter: Sprite2D = $filter
+@onready var cooldown: Timer = $Cooldown
 
 func _physics_process(delta: float) -> void:
 
@@ -26,13 +26,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if(Input.is_action_just_pressed("1_find")):
-		_find()
-
+		if(cooldown.is_stopped()):
+			_find()
+			cooldown.start()
+		else:
+			pass #feedback si find en cooldown ?
 
 func _find():
-	print("finding...")
 	for area in area_2d.get_overlapping_areas():
 		if(area.get_parent().name.contains("player")):
-			print("found player")
 			area.get_parent().die()
 			pass

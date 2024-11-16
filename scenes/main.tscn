@@ -29,9 +29,6 @@ texture = ExtResource("1_t2q83")
 [node name="VacheSpawn" parent="." instance=ExtResource("2_uakia")]
 position = Vector2(-352, -196)
 
-[node name="generator" parent="." instance=ExtResource("3_7y5e8")]
-position = Vector2(936, 464)
-
 [node name="hunter" parent="." instance=ExtResource("4_addal")]
 position = Vector2(572, 329)
 
@@ -43,11 +40,14 @@ id = 2
 position = Vector2(862, 197)
 id = 3
 
+[node name="generator" parent="." instance=ExtResource("3_7y5e8")]
+position = Vector2(932, 430)
+
 [node name="generator2" parent="." instance=ExtResource("3_7y5e8")]
-position = Vector2(68, 543)
+position = Vector2(45, 437)
 
 [node name="generator3" parent="." instance=ExtResource("3_7y5e8")]
-position = Vector2(-28, -87)
+position = Vector2(-13, -11)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
