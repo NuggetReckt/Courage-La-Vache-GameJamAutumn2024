@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var area_2d: Area2D = $Area2D
 #@onready var filter: Sprite2D = $filter
 @onready var cooldown: Timer = $Cooldown
+@onready var black_hole: Sprite2D = $MasqueNoirHaloPetit
 
 func _physics_process(delta: float) -> void:
 
