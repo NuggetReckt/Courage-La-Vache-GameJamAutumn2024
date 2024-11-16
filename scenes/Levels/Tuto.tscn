@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cyphivn6lu5tu"]
+[gd_scene load_steps=13 format=3 uid="uid://cyphivn6lu5tu"]
 
 [ext_resource type="PackedScene" uid="uid://btmixqkw76nko" path="res://scenes/GenTest/MurVertical.tscn" id="1_fbw6u"]
 [ext_resource type="Script" path="res://scenes/Levels/tuto.gd" id="1_nuefd"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://hpw6u7lu2wns" path="res://scenes/hunter.tscn" id="5_vksto"]
 [ext_resource type="Texture2D" uid="uid://cod6sr7un2kjn" path="res://assets/terrain_real.png" id="6_81hdc"]
 [ext_resource type="PackedScene" uid="uid://dax08101yn5p7" path="res://scenes/player.tscn" id="7_navjm"]
+[ext_resource type="Texture2D" uid="uid://bg2aqnbwxkebx" path="res://assets/tutorial_slide.png" id="8_jhuix"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msbio"]
 size = Vector2(50, 1121)
@@ -66,6 +67,7 @@ position = Vector2(1609, 822)
 position = Vector2(101, 827)
 
 [node name="hunter" parent="." instance=ExtResource("5_vksto")]
+visible = false
 position = Vector2(1000, 560)
 
 [node name="Ground" type="Sprite2D" parent="."]
@@ -112,3 +114,8 @@ shape = SubResource("RectangleShape2D_cnap8")
 
 [node name="generator2" parent="." instance=ExtResource("4_ggekm")]
 position = Vector2(867, 823)
+
+[node name="TutorialSlide" type="Sprite2D" parent="."]
+position = Vector2(1437, 546)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_jhuix")
