@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var player_counter: Label = $PlayerCounter
 @onready var day_timer: Timer = $DayTimer
+@onready var transition_timer: Timer = $TransitionTimer
 var night : bool
 
 # Called when the node enters the scene tree for the first time.
@@ -15,7 +16,13 @@ func _process(delta: float) -> void:
 	
 	#jour/nuit
 	if(!night):
-		find_child("hunter").black_hole.modulate = Color(1,1,1,0)
+		if(!transition_timer.is_stopped()):
+			var alpha_percentage = (transition_timer.wait_time - transition_timer.time_left)/transition_timer.wait_time
+			find_child("hunter").black_hole.modulate = Color(1,1,1,alpha_percentage)
+
+		else:
+			find_child("hunter").black_hole.modulate = Color(1,1,1,0)
+
 	else:
 		find_child("hunter").black_hole.modulate = Color(1,1,1,1)
 	
@@ -32,5 +39,7 @@ func _process(delta: float) -> void:
 
 
 func _on_day_timer_timeout() -> void:
+	transition_timer.start()
+
+func _on_transition_timer_timeout() -> void:
 	night = true
-	pass # Replace with function body.

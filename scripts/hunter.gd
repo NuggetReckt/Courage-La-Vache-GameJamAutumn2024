@@ -14,6 +14,9 @@ func _physics_process(delta: float) -> void:
 	#if(!cooldown.is_stopped()):
 	#	return
 	
+	if(!get_parent().night):
+		return
+	
 	if id != 1: return #au cas ou c pas le hunter mais pas possible
 
 	#Movement globals

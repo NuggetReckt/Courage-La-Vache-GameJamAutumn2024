@@ -107,7 +107,9 @@ offset_left = 1172.0
 offset_top = -213.0
 offset_right = 1457.0
 offset_bottom = -141.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.94902, 0.988235, 0.141176, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("9_q2xl5")
 theme_override_font_sizes/font_size = 50
 text = "0"
@@ -118,4 +120,8 @@ vertical_alignment = 1
 wait_time = 5.0
 one_shot = true
 
+[node name="TransitionTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]
+[connection signal="timeout" from="TransitionTimer" to="." method="_on_transition_timer_timeout"]
