@@ -48,13 +48,10 @@ func _process(delta: float) -> void:
 func toggle_generator() -> void:
 	var fill_count: int = Main.get_generator_charge_count()
 	var state: GENERATOR_STATE = get_current_generator_state()
-	var new_state: GENERATOR_STATE = state
+	var new_state: GENERATOR_STATE = state + 1
 	
-	if (state + 1 >= GENERATOR_STATE.size()):
-		new_state = 0
+	if (new_state >= GENERATOR_STATE.size() - 1):
 		Main.set_generator_charge_count(fill_count + 1)
-	else:
-		new_state += 1
 	
 	GENERATOR_SPRITES.get(state).visible = false
 	GENERATOR_SPRITES.get(new_state).visible = true

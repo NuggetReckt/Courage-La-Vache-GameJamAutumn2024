@@ -6,7 +6,7 @@ var players_alive_count: int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	generator_charge_count = 0
-	players_alive_count = 4
+	players_alive_count = 2
 	pass # Replace with function body.
 	
 func _unhandled_input(event: InputEvent) -> void:
