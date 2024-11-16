@@ -24,9 +24,20 @@ func _physics_process(delta: float) -> void:
 	if(dead):
 		return
 	
+	if(get_parent().name == "Tuto"):
+		label.text = "joueur " + str(id-1)
+		match id:
+			2: label.add_theme_color_override("font_color", Color.RED)
+			3: label.add_theme_color_override("font_color", Color.YELLOW)
+			4: label.add_theme_color_override("font_color", Color.BLUE)
+	
 	if(!get_parent().night):
 		#name
 		label.text = "joueur " + str(id-1)
+		match id:
+			2: label.add_theme_color_override("font_color", Color.RED)
+			3: label.add_theme_color_override("font_color", Color.YELLOW)
+			4: label.add_theme_color_override("font_color", Color.BLUE)
 		#rotatation
 		sprite.rotation += 0.01*speed*delta
 		z_index = 3
@@ -34,13 +45,10 @@ func _physics_process(delta: float) -> void:
 		if(sprite.scale.x < 0.15):
 			sprite.scale.x += 0.01*10*delta
 			sprite.scale.y += 0.01*10*delta
-		#elif(sprite.scale.x > 0.09 && sprite.scale.x < 0.1):
-		#	sprite.scale.x -= 0.01*10*delta
-		#	sprite.scale.y -= 0.01*10*delta
 
 		return #bloque les controles
 	else:
-		if(label.text != ""):
+		if(label.text != "" && get_parent().name != "Tuto"):
 			label.text = ""
 			sprite.rotation = 0
 			sprite.scale.x = 0.09
