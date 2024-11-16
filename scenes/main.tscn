@@ -1,10 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://ni026ge8jep5"]
+[gd_scene load_steps=10 format=3 uid="uid://ni026ge8jep5"]
 
 [ext_resource type="Texture2D" uid="uid://dt7br5moencsg" path="res://assets/ground.png" id="1_t2q83"]
 [ext_resource type="PackedScene" uid="uid://dvbdupvebwhq5" path="res://scenes/GenTest/MapSpawn.tscn" id="2_uakia"]
 [ext_resource type="PackedScene" uid="uid://bmx4akp13eyvn" path="res://scenes/generator.tscn" id="3_7y5e8"]
 [ext_resource type="PackedScene" uid="uid://hpw6u7lu2wns" path="res://scenes/hunter.tscn" id="4_addal"]
 [ext_resource type="PackedScene" uid="uid://dax08101yn5p7" path="res://scenes/player.tscn" id="5_qulml"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0hbf"]
+size = Vector2(50, 1121)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpb7m"]
+size = Vector2(1814, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w102w"]
+size = Vector2(59, 1119)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atiq4"]
+size = Vector2(1874, 73)
 
 [node name="main" type="Node2D"]
 
@@ -39,3 +51,23 @@ position = Vector2(-28, -87)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+
+[node name="walls" type="StaticBody2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
+position = Vector2(-336, 270)
+shape = SubResource("RectangleShape2D_a0hbf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls"]
+position = Vector2(577, -261)
+shape = SubResource("RectangleShape2D_qpb7m")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="walls"]
+position = Vector2(1510.5, 266.5)
+shape = SubResource("RectangleShape2D_w102w")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="walls"]
+position = Vector2(600, 854)
+shape = SubResource("RectangleShape2D_atiq4")
