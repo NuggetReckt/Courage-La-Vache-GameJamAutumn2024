@@ -115,6 +115,6 @@ shape = SubResource("RectangleShape2D_cnap8")
 position = Vector2(867, 823)
 
 [node name="TutorialSlide" type="Sprite2D" parent="."]
-position = Vector2(1437, 546)
+position = Vector2(952, 559)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_jhuix")
