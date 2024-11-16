@@ -7,7 +7,7 @@ var tabMur : Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for i in range(25):
+	for i in range(20):
 		inst()
 		
 	for child in get_parent().get_children():
