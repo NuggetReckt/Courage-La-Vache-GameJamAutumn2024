@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmx4akp13eyvn"]
+[gd_scene load_steps=7 format=3 uid="uid://bmx4akp13eyvn"]
 
 [ext_resource type="Script" path="res://scripts/generator.gd" id="1_bmxyn"]
-[ext_resource type="Texture2D" uid="uid://dthba14ehpkt6" path="res://icon.svg" id="2_msnou"]
+[ext_resource type="Texture2D" uid="uid://dggshqp5vcxpq" path="res://assets/anims/generateur/generator_activated_3_Finish.png" id="2_l710p"]
+[ext_resource type="Texture2D" uid="uid://btiiejfc8454m" path="res://assets/anims/generateur/generator_off.png" id="3_bybwb"]
+[ext_resource type="Texture2D" uid="uid://v00ue1pfkrs4" path="res://assets/anims/generateur/generator_activated_1.png" id="3_t530s"]
+[ext_resource type="Texture2D" uid="uid://btgnps6iy18lu" path="res://assets/anims/generateur/generator_activated_2.png" id="4_b8syy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jfq73"]
 radius = 91.022
@@ -12,25 +15,26 @@ script = ExtResource("1_bmxyn")
 
 [node name="Bucket" type="Sprite2D" parent="."]
 position = Vector2(100, 100)
-rotation = 3.14159
-texture = ExtResource("2_msnou")
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_l710p")
 
 [node name="OneQuarterBucket" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(100, 100)
-rotation = -1.5708
-texture = ExtResource("2_msnou")
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_t530s")
 
 [node name="ThreeQuartersBucket" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(100, 100)
-texture = ExtResource("2_msnou")
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_b8syy")
 
 [node name="EmptyBucket" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(100, 100)
-rotation = 1.5708
-texture = ExtResource("2_msnou")
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_bybwb")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(100, 100)
@@ -39,4 +43,5 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.99998, -8)
 shape = SubResource("CircleShape2D_jfq73")

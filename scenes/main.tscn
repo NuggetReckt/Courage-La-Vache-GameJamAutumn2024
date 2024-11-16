@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ni026ge8jep5"]
 
 [ext_resource type="Texture2D" uid="uid://dt7br5moencsg" path="res://assets/ground.png" id="1_t2q83"]
-[ext_resource type="PackedScene" uid="uid://dvbdupvebwhq5" path="res://scenes/VacheTest/VacheSpawn.tscn" id="2_uakia"]
+[ext_resource type="PackedScene" uid="uid://dvbdupvebwhq5" path="res://scenes/GenTest/MapSpawn.tscn" id="2_uakia"]
 [ext_resource type="PackedScene" uid="uid://bmx4akp13eyvn" path="res://scenes/generator.tscn" id="3_7y5e8"]
 [ext_resource type="PackedScene" uid="uid://hpw6u7lu2wns" path="res://scenes/hunter.tscn" id="4_addal"]
 [ext_resource type="PackedScene" uid="uid://dax08101yn5p7" path="res://scenes/player.tscn" id="5_qulml"]

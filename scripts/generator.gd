@@ -6,7 +6,7 @@ extends Node2D
 @onready var bucket: Sprite2D = $Bucket
 @onready var area_2d: Area2D = $Area2D
 
-var BUCKET_SPRITES = {
+@onready var BUCKET_SPRITES = {
 	Main.BUCKET_STATE.EMPTY: empty_bucket,
 	Main.BUCKET_STATE.ONE_QUARTER: one_quarter_bucket,
 	Main.BUCKET_STATE.THREE_QUARTERS: three_quarters_bucket,
@@ -17,7 +17,7 @@ var time_held: float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for sprite: Sprite2D in BUCKET_SPRITES:
+	for sprite: Sprite2D in BUCKET_SPRITES.values():
 		sprite.visible = false
 	empty_bucket.visible = true
 	pass # Replace with function body.
@@ -32,7 +32,6 @@ func _process(delta: float) -> void:
 		
 			if (Input.is_action_pressed(str(player.getId()) + "_fill")):
 				time_held = time_held + 0.01
-				print(time_held)
 				if (time_held >= 2):
 					toggle_bucket()
 					time_held = 0
@@ -45,7 +44,7 @@ func toggle_bucket() -> void:
 	var state: Main.BUCKET_STATE =  Main.get_bucket_state()
 	var new_state: Main.BUCKET_STATE
 	
-	if (state >= Main.BUCKET_STATE.size()):
+	if (state + 1 >= Main.BUCKET_STATE.size()):
 		new_state = 0
 		Main.set_bucket_fill_count(fill_count + 1)
 	else:

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qrgkpr1nteuy"
-path="res://.godot/imported/courage-3.png-e190e6e1ec2dca98e7e03b8bea9f36cc.ctex"
+path="res://.godot/imported/courage-3.png-4a7eff82e7564167f045c9ad8adc7788.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/anims/courage-3.png"
-dest_files=["res://.godot/imported/courage-3.png-e190e6e1ec2dca98e7e03b8bea9f36cc.ctex"]
+source_file="res://assets/anims/vache/courage-3.png"
+dest_files=["res://.godot/imported/courage-3.png-4a7eff82e7564167f045c9ad8adc7788.ctex"]
 
 [params]
 

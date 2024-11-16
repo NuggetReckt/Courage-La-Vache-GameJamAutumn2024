@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://dax08101yn5p7"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xef8h"]
-[ext_resource type="Texture2D" uid="uid://b876uxp0pdkur" path="res://assets/anims/courage-2.png" id="2_rw3df"]
-[ext_resource type="Texture2D" uid="uid://qrgkpr1nteuy" path="res://assets/anims/courage-3.png" id="3_ci52g"]
-[ext_resource type="Texture2D" uid="uid://dxohcwvmvimpi" path="res://assets/anims/courage_-1.png" id="4_30kki"]
+[ext_resource type="Texture2D" uid="uid://b876uxp0pdkur" path="res://assets/anims/vache/courage-2.png" id="2_rw3df"]
+[ext_resource type="Texture2D" uid="uid://qrgkpr1nteuy" path="res://assets/anims/vache/courage-3.png" id="3_ci52g"]
+[ext_resource type="Texture2D" uid="uid://dxohcwvmvimpi" path="res://assets/anims/vache/courage_-1.png" id="4_30kki"]
 [ext_resource type="Texture2D" uid="uid://bacyk1jqv7ndn" path="res://assets/mieuuh.png" id="5_pm824"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0pla8"]
@@ -54,6 +54,7 @@ sprite_frames = SubResource("SpriteFrames_p0l83")
 frame_progress = 0.390852
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 3
 position = Vector2(0, -75)
 emitting = false
 amount = 1

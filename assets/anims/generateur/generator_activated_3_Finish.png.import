@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxohcwvmvimpi"
-path="res://.godot/imported/courage_-1.png-26ad10e8075084282d065c3639ab7cae.ctex"
+uid="uid://dggshqp5vcxpq"
+path="res://.godot/imported/generator_activated_3_Finish.png-8ccbb477b254bc3e0fa87cc698fc41c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/anims/courage_-1.png"
-dest_files=["res://.godot/imported/courage_-1.png-26ad10e8075084282d065c3639ab7cae.ctex"]
+source_file="res://assets/anims/generateur/generator_activated_3_Finish.png"
+dest_files=["res://.godot/imported/generator_activated_3_Finish.png-8ccbb477b254bc3e0fa87cc698fc41c2.ctex"]
 
 [params]
 

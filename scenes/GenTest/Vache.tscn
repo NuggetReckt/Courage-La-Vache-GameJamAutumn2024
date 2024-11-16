@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvldbpbb1lugy"]
 
-[ext_resource type="Texture2D" uid="uid://dxohcwvmvimpi" path="res://assets/anims/courage_-1.png" id="1_xp7nb"]
+[ext_resource type="Texture2D" uid="uid://dxohcwvmvimpi" path="res://assets/anims/vache/courage_-1.png" id="1_xp7nb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7aai"]
 size = Vector2(142, 105)
