@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 300.0
 @export var id : int = 1
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: Sprite2D = $MasqueNoirHaloJaune
 @onready var area_2d: Area2D = $Area2D
 
 func _physics_process(delta: float) -> void:

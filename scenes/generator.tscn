@@ -7,16 +7,15 @@
 radius = 91.022
 
 [node name="generator" type="Node2D"]
+z_index = 1
 script = ExtResource("1_bmxyn")
 
 [node name="Bucket" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(100, 100)
 rotation = 3.14159
 texture = ExtResource("2_msnou")
 
 [node name="EmptyBucket" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(100, 100)
 texture = ExtResource("2_msnou")
 

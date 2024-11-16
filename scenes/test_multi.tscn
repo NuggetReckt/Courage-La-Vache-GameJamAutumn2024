@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccw8ntv3l71rt"]
+[gd_scene load_steps=4 format=3 uid="uid://ccw8ntv3l71rt"]
 
 [ext_resource type="PackedScene" uid="uid://dax08101yn5p7" path="res://scenes/player.tscn" id="1_el11h"]
 [ext_resource type="PackedScene" uid="uid://hpw6u7lu2wns" path="res://scenes/hunter.tscn" id="2_iwep6"]
+[ext_resource type="PackedScene" uid="uid://bmx4akp13eyvn" path="res://scenes/generator.tscn" id="3_otb33"]
 
 [node name="test_multi" type="Node2D"]
 
@@ -11,3 +12,6 @@ id = 2
 
 [node name="hunter" parent="." instance=ExtResource("2_iwep6")]
 position = Vector2(328, 291)
+
+[node name="generator" parent="." instance=ExtResource("3_otb33")]
+position = Vector2(889, 442)

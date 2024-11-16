@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://hpw6u7lu2wns"]
 
 [ext_resource type="Script" path="res://scripts/hunter.gd" id="1_hyoou"]
-[ext_resource type="Texture2D" uid="uid://dxdrl7rqcusnj" path="res://assets/masque_noir_halo.png" id="2_27dmy"]
+[ext_resource type="Texture2D" uid="uid://c8vcjfk8s3a4j" path="res://assets/masque_noir_halo_jaune.png" id="2_uq53e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_myg1l"]
 radius = 41.0
@@ -14,6 +14,7 @@ height = 378.81
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_hyoou")
+speed = 210.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 0)
@@ -26,6 +27,6 @@ position = Vector2(6, 6)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_2wrwq")
 
-[node name="MasqueNoirHalo" type="Sprite2D" parent="."]
-position = Vector2(140, 2)
-texture = ExtResource("2_27dmy")
+[node name="MasqueNoirHaloJaune" type="Sprite2D" parent="."]
+position = Vector2(137, 2)
+texture = ExtResource("2_uq53e")

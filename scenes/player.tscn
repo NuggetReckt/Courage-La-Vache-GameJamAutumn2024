@@ -1,28 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://dax08101yn5p7"]
+[gd_scene load_steps=7 format=3 uid="uid://dax08101yn5p7"]
 
-[ext_resource type="Texture2D" uid="uid://dthba14ehpkt6" path="res://icon.svg" id="1_m0hqx"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xef8h"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m118l"]
-size = Vector2(125, 114)
+[ext_resource type="Texture2D" uid="uid://b876uxp0pdkur" path="res://assets/anims/courage-2.png" id="2_rw3df"]
+[ext_resource type="Texture2D" uid="uid://qrgkpr1nteuy" path="res://assets/anims/courage-3.png" id="3_ci52g"]
+[ext_resource type="Texture2D" uid="uid://dxohcwvmvimpi" path="res://assets/anims/courage_-1.png" id="4_30kki"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0pla8"]
-radius = 88.5664
+radius = 45.0999
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p0l83"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_30kki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ci52g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_30kki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rw3df")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_xef8h")
+speed = 200.0
 id = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -1)
-shape = SubResource("RectangleShape2D_m118l")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_m0hqx")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+position = Vector2(-6.5, 6)
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_0pla8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.04, 0.04)
+sprite_frames = SubResource("SpriteFrames_p0l83")
+frame_progress = 0.597693

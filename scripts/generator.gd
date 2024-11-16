@@ -4,7 +4,7 @@ extends Node2D
 @onready var empty_bucket: Sprite2D = $EmptyBucket
 @onready var area_2d: Area2D = $Area2D
 
-var time_held: int = 0
+var time_held: float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,8 +20,9 @@ func _process(delta: float) -> void:
 		if (is_player(area)):
 			var player: Node = area.get_parent()
 		
-			if (Input.is_action_just_pressed(str(player.getId()) + "_fill")):
-				time_held = time_held + delta
+			if (Input.is_action_pressed(str(player.getId()) + "_fill")):
+				time_held = time_held + 0.01
+				print(time_held)
 				if (time_held >= 2):
 					toggle_bucket()
 					time_held = 0
