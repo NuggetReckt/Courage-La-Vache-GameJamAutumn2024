@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0mw8wj8s5u5w"]
+[gd_scene load_steps=13 format=3 uid="uid://bv5d6qt2x13q"]
 
 [ext_resource type="Script" path="res://scenes/audio_manager.gd" id="1_wh808"]
 [ext_resource type="AudioStream" uid="uid://bgl3g7iattxwf" path="res://assets/sounds/mooh_1.wav" id="2_kgp3x"]
@@ -8,8 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://crukeo4lg3evd" path="res://assets/sounds/game_end.wav" id="6_e0aol"]
 [ext_resource type="AudioStream" uid="uid://b5vf4age662ig" path="res://assets/sounds/catch_attempt_1.wav" id="7_fbtqt"]
 [ext_resource type="AudioStream" uid="uid://byw1xo1lalcs4" path="res://assets/sounds/catch_attempt_2.wav" id="8_43hs6"]
-[ext_resource type="AudioStream" uid="uid://dgan3kikbhnrv" path="res://assets/sounds/catch_1.wav" id="9_x5242"]
-[ext_resource type="AudioStream" uid="uid://b3wy0wug1sx02" path="res://assets/sounds/catch_2.wav" id="10_2je0g"]
+[ext_resource type="AudioStream" uid="uid://bjxgemk1jk2hn" path="res://assets/sounds/catch_1.wav" id="9_x5242"]
+[ext_resource type="AudioStream" uid="uid://khobao55auly" path="res://assets/sounds/catch_2.wav" id="10_2je0g"]
 [ext_resource type="AudioStream" uid="uid://70agy2h2g4vx" path="res://assets/sounds/menu_theme.wav" id="11_ynaqd"]
 [ext_resource type="AudioStream" uid="uid://bi4t8e4w2nncf" path="res://assets/sounds/game_theme.wav" id="12_jmnoc"]
 

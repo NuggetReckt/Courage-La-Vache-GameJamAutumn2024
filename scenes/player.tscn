@@ -27,7 +27,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 7.0
+"speed": 10.0
 }]
 
 [sub_resource type="Curve" id="Curve_vp67o"]
