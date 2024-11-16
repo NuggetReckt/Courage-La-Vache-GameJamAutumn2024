@@ -20,7 +20,7 @@ size = Vector2(59, 1119)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cnap8"]
 size = Vector2(1874, 73)
 
-[node name="Lvl1" type="Node2D"]
+[node name="Lvl2" type="Node2D"]
 
 [node name="MurVertical" parent="." instance=ExtResource("1_2ql7a")]
 position = Vector2(612, 729)
@@ -68,11 +68,11 @@ scale = Vector2(2.55, 2.55)
 texture = ExtResource("6_weiu3")
 
 [node name="player" parent="." instance=ExtResource("7_2y2pk")]
-position = Vector2(180, 229)
+position = Vector2(886, 373)
 id = 2
 
 [node name="player2" parent="." instance=ExtResource("7_2y2pk")]
-position = Vector2(862, 197)
+position = Vector2(774, 159)
 id = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]

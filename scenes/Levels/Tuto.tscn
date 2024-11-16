@@ -1,0 +1,88 @@
+[gd_scene load_steps=12 format=3 uid="uid://cyphivn6lu5tu"]
+
+[ext_resource type="PackedScene" uid="uid://btmixqkw76nko" path="res://scenes/GenTest/MurVertical.tscn" id="1_fbw6u"]
+[ext_resource type="Script" path="res://scenes/Levels/tuto.gd" id="1_nuefd"]
+[ext_resource type="PackedScene" uid="uid://b4h1lkpwl4hrs" path="res://scenes/GenTest/MurHorizontal.tscn" id="2_ixm75"]
+[ext_resource type="PackedScene" uid="uid://bmx4akp13eyvn" path="res://scenes/generator.tscn" id="4_ggekm"]
+[ext_resource type="PackedScene" uid="uid://hpw6u7lu2wns" path="res://scenes/hunter.tscn" id="5_vksto"]
+[ext_resource type="Texture2D" uid="uid://dt7br5moencsg" path="res://assets/ground.png" id="6_ihh35"]
+[ext_resource type="PackedScene" uid="uid://dax08101yn5p7" path="res://scenes/player.tscn" id="7_navjm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_msbio"]
+size = Vector2(50, 1121)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8m07d"]
+size = Vector2(1814, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2s235"]
+size = Vector2(59, 1119)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnap8"]
+size = Vector2(1874, 73)
+
+[node name="Tuto" type="Node2D"]
+script = ExtResource("1_nuefd")
+
+[node name="MurVertical" parent="." instance=ExtResource("1_fbw6u")]
+position = Vector2(1070, 129)
+
+[node name="MurHorizontal" parent="." instance=ExtResource("2_ixm75")]
+position = Vector2(1574, 380)
+
+[node name="MurHorizontal2" parent="." instance=ExtResource("2_ixm75")]
+position = Vector2(1816, 380)
+
+[node name="MurHorizontal3" parent="." instance=ExtResource("2_ixm75")]
+position = Vector2(369, 347)
+
+[node name="MurHorizontal4" parent="." instance=ExtResource("2_ixm75")]
+position = Vector2(122, 348)
+
+[node name="generator" parent="." instance=ExtResource("4_ggekm")]
+position = Vector2(1609, 822)
+
+[node name="generator4" parent="." instance=ExtResource("4_ggekm")]
+position = Vector2(101, 827)
+
+[node name="hunter" parent="." instance=ExtResource("5_vksto")]
+visible = false
+position = Vector2(1000, 560)
+
+[node name="Ground" type="Sprite2D" parent="."]
+visible = false
+z_index = -2
+position = Vector2(967, 534)
+scale = Vector2(2.55, 2.55)
+texture = ExtResource("6_ihh35")
+
+[node name="player" parent="." instance=ExtResource("7_navjm")]
+position = Vector2(755, 602)
+id = 2
+
+[node name="player2" parent="." instance=ExtResource("7_navjm")]
+position = Vector2(1353, 615)
+id = 3
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(959, 538)
+
+[node name="walls" type="StaticBody2D" parent="."]
+position = Vector2(370, 235)
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
+position = Vector2(-336, 270)
+shape = SubResource("RectangleShape2D_msbio")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls"]
+position = Vector2(577, -261)
+shape = SubResource("RectangleShape2D_8m07d")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="walls"]
+position = Vector2(1510.5, 266.5)
+shape = SubResource("RectangleShape2D_2s235")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="walls"]
+position = Vector2(600, 854)
+shape = SubResource("RectangleShape2D_cnap8")
