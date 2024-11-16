@@ -15,8 +15,21 @@ position = Vector2(100, 100)
 rotation = 3.14159
 texture = ExtResource("2_msnou")
 
-[node name="EmptyBucket" type="Sprite2D" parent="."]
+[node name="OneQuarterBucket" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(100, 100)
+rotation = -1.5708
+texture = ExtResource("2_msnou")
+
+[node name="ThreeQuartersBucket" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(100, 100)
+texture = ExtResource("2_msnou")
+
+[node name="EmptyBucket" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(100, 100)
+rotation = 1.5708
 texture = ExtResource("2_msnou")
 
 [node name="Area2D" type="Area2D" parent="."]
