@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://brb1pjk885olg"]
 
-[ext_resource type="Script" path="res://scenes/Levels/LevelManager.gd" id="1_7n133"]
+[ext_resource type="Script" path="res://scripts/LevelManager.gd" id="1_7n133"]
 [ext_resource type="PackedScene" uid="uid://btmixqkw76nko" path="res://scenes/GenTest/MurVertical.tscn" id="1_bj5r5"]
 [ext_resource type="PackedScene" uid="uid://b4h1lkpwl4hrs" path="res://scenes/GenTest/MurHorizontal.tscn" id="2_2halj"]
 [ext_resource type="PackedScene" uid="uid://dvbdupvebwhq5" path="res://scenes/GenTest/MapSpawn.tscn" id="3_oktnj"]
