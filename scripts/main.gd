@@ -18,9 +18,11 @@ func _unhandled_input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if (generator_charge_count >= 3):
 		print("les vaches ont gagné !")
+		get_tree().change_scene_to_file("res://scenes/CowWin.tscn")
 		return
 	if (players_alive_count <= 0):
 		print("le chasseur à gagné !")
+		get_tree().change_scene_to_file("res://scenes/HunterWin.tscn")
 		return
 	pass
 	
