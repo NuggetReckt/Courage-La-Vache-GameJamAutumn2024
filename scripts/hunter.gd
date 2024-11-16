@@ -10,6 +10,9 @@ func _physics_process(delta: float) -> void:
 
 	#print(name + " has id " + str(id))
 	
+	#if(!cooldown.is_stopped()):
+	#	return
+	
 	if id != 1: return #au cas ou c pas le hunter mais pas possible
 
 	#Movement globals

@@ -16,14 +16,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (generator_charge_count >= 3):
-		print("les vaches ont gagné !")
-		get_tree().change_scene_to_file("res://scenes/CowWin.tscn")
-		return
-	if (players_alive_count <= 0):
-		print("le chasseur à gagné !")
-		get_tree().change_scene_to_file("res://scenes/HunterWin.tscn")
-		return
 	pass
 	
 func set_generator_charge_count(count: int) -> void:

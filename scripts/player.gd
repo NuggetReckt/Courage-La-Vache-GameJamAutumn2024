@@ -64,10 +64,10 @@ func die():
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(1, false)
 	z_index = 3
-	Main.players_alive_count -= 1
 	
 func getId():
 	return id
 
 func _on_death_timer_timeout() -> void:
+	Main.players_alive_count -= 1
 	queue_free()

@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://brb1pjk885olg"]
+[gd_scene load_steps=13 format=3 uid="uid://brb1pjk885olg"]
 
+[ext_resource type="Script" path="res://scenes/Levels/LevelManager.gd" id="1_7n133"]
 [ext_resource type="PackedScene" uid="uid://btmixqkw76nko" path="res://scenes/GenTest/MurVertical.tscn" id="1_bj5r5"]
 [ext_resource type="PackedScene" uid="uid://b4h1lkpwl4hrs" path="res://scenes/GenTest/MurHorizontal.tscn" id="2_2halj"]
 [ext_resource type="PackedScene" uid="uid://dvbdupvebwhq5" path="res://scenes/GenTest/MapSpawn.tscn" id="3_oktnj"]
@@ -21,6 +22,7 @@ size = Vector2(59, 1119)
 size = Vector2(1874, 73)
 
 [node name="Lvl1" type="Node2D"]
+script = ExtResource("1_7n133")
 
 [node name="MurVertical" parent="." instance=ExtResource("1_bj5r5")]
 position = Vector2(400, 137)
@@ -58,7 +60,6 @@ position = Vector2(74, 36)
 position = Vector2(874, 227)
 
 [node name="hunter" parent="." instance=ExtResource("5_5baea")]
-visible = false
 position = Vector2(1000, 560)
 
 [node name="Ground" type="Sprite2D" parent="."]
