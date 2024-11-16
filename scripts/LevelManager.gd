@@ -43,21 +43,21 @@ func _process(delta: float) -> void:
 	
 	#conditions de win
 	if (is_game_ended):
+		if (AudioManager.game_theme.playing):
+			AudioManager.game_theme.stop()
+		AudioManager.game_end_sfx.play()
 		if (Main.generator_charge_count >= 3):
 			cows_victory_screen.visible = true
-			if(end_timer.is_stopped()):
+			if (end_timer.is_stopped()):
 				end_timer.start()
 				print("les vaches ont gagné !")
 			return
 		if (Main.players_alive_count <= 0):
 			alien_victory_screen.visible = true
-			if(end_timer.is_stopped()):
+			if (end_timer.is_stopped()):
 				end_timer.start()
 				print("le chasseur à gagné !")
 			return
-		if (AudioManager.game_theme.playing):
-			AudioManager.game_theme.stop()
-		AudioManager.game_end_sfx.play()
 	
 	if (night):
 		if (!$CowCounterFaceAlive.visible):
