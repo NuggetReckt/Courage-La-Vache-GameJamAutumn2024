@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dax08101yn5p7"]
+[gd_scene load_steps=10 format=3 uid="uid://dax08101yn5p7"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xef8h"]
 [ext_resource type="Texture2D" uid="uid://b876uxp0pdkur" path="res://assets/anims/vache/courage-2.png" id="2_rw3df"]
 [ext_resource type="Texture2D" uid="uid://qrgkpr1nteuy" path="res://assets/anims/vache/courage-3.png" id="3_ci52g"]
 [ext_resource type="Texture2D" uid="uid://dxohcwvmvimpi" path="res://assets/anims/vache/courage_-1.png" id="4_30kki"]
 [ext_resource type="Texture2D" uid="uid://bacyk1jqv7ndn" path="res://assets/mieuuh.png" id="5_pm824"]
+[ext_resource type="FontFile" uid="uid://d1cu1o4a8hlpj" path="res://assets/fonts/Joystick.ttf" id="6_wpcvc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0pla8"]
 radius = 45.0999
@@ -73,5 +74,17 @@ scale_amount_curve = SubResource("Curve_vp67o")
 [node name="Death_Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="Label" type="Label" parent="."]
+z_index = 3
+offset_left = -112.0
+offset_top = -105.0
+offset_right = 129.0
+offset_bottom = 4.0
+theme_override_colors/font_color = Color(0.94902, 0.988235, 0.141176, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_wpcvc")
+theme_override_font_sizes/font_size = 50
 
 [connection signal="timeout" from="Death_Timer" to="." method="_on_death_timer_timeout"]

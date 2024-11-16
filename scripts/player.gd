@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var particles: CPUParticles2D = $CPUParticles2D
 @onready var death_timer: Timer = $Death_Timer
+@onready var label: Label = $Label
 
 var dead : bool
 
@@ -22,6 +23,13 @@ func _physics_process(delta: float) -> void:
 	
 	if(dead):
 		return
+	
+	if(!get_parent().night):
+		label.text = "joueur " + str(id-1)
+		return
+	else:
+		if(label.text != ""):
+			label.text = ""
 	
 	#print(name + " has id " + str(id))
 
