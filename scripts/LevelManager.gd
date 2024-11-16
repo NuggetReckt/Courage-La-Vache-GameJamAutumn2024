@@ -3,6 +3,9 @@ extends Node2D
 @onready var player_counter: Label = $PlayerCounter
 @onready var day_timer: Timer = $DayTimer
 @onready var transition_timer: Timer = $TransitionTimer
+@onready var alien_victory_screen: Sprite2D = $AlienVictoryScreen
+@onready var cows_victory_screen: Sprite2D = $CowsVictoryScreen
+@onready var end_timer: Timer = $EndTimer
 
 var night : bool
 var is_game_ended: bool
@@ -14,6 +17,8 @@ func _ready() -> void:
 	night = false
 	Main.generator_charge_count = 0
 	Main.players_alive_count = 3
+	alien_victory_screen.visible = false
+	cows_victory_screen.visible = false
 	
 	if (AudioManager.menu_theme.playing):
 		AudioManager.menu_theme.stop()
@@ -39,14 +44,19 @@ func _process(delta: float) -> void:
 	#conditions de win
 	if (is_game_ended):
 		if (Main.generator_charge_count >= 3):
-			print("les vaches ont gagné !")
-			get_tree().change_scene_to_file("res://scenes/Levels/MainMenu.tscn")
+			cows_victory_screen.visible = true
+			if(end_timer.is_stopped()):
+				end_timer.start()
+				print("les vaches ont gagné !")
 			return
 		if (Main.players_alive_count <= 0):
-			print("le chasseur à gagné !")
-			get_tree().change_scene_to_file("res://scenes/Levels/MainMenu.tscn")
+			alien_victory_screen.visible = true
+			if(end_timer.is_stopped()):
+				end_timer.start()
+				print("le chasseur à gagné !")
 			return
 		AudioManager.game_end_sfx.play()
+
 	
 	if(night):
 		if(!$CowCounterFaceAlive.visible):
@@ -63,11 +73,13 @@ func _on_day_timer_timeout() -> void:
 func _on_transition_timer_timeout() -> void:
 	AudioManager.game_start_sfx.play()
 	night = true
-	
 	play_music()
 	
 func play_music() -> void:
-	await get_tree().create_timer(AudioManager.game_start_sfx.stream.get_length() + 1).timeout
+	await get_tree().create_timer(AudioManager.game_start_sfx.stream.get_length()).timeout
 	AudioManager.game_theme.play()
 	await get_tree().create_timer(AudioManager.game_theme.stream.get_length()).timeout
 	AudioManager.game_theme_no_intro.play()
+
+func _on_end_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://scenes/Levels/MainMenu.tscn")
