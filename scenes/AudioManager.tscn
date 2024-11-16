@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bv5d6qt2x13q"]
+[gd_scene load_steps=16 format=3 uid="uid://bv5d6qt2x13q"]
 
 [ext_resource type="Script" path="res://scripts/audio_manager.gd" id="1_wh808"]
 [ext_resource type="AudioStream" uid="uid://bgl3g7iattxwf" path="res://assets/sounds/mooh_1.wav" id="2_kgp3x"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://70agy2h2g4vx" path="res://assets/sounds/menu_theme.wav" id="11_ynaqd"]
 [ext_resource type="AudioStream" uid="uid://bi4t8e4w2nncf" path="res://assets/sounds/game_theme.wav" id="12_jmnoc"]
 [ext_resource type="AudioStream" uid="uid://dk8222abbfqoy" path="res://assets/sounds/generator_fill.wav" id="13_2m616"]
+[ext_resource type="AudioStream" uid="uid://bg4umqur2604k" path="res://assets/sounds/game_theme_no_intro.wav" id="13_jenh1"]
 [ext_resource type="AudioStream" uid="uid://c1bdvy6opqeep" path="res://assets/sounds/generator_full.wav" id="14_kdljn"]
 
 [node name="AudioManager" type="Node"]
@@ -50,6 +51,9 @@ stream = ExtResource("11_ynaqd")
 
 [node name="GameTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_jmnoc")
+
+[node name="GameThemeNoIntro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_jenh1")
 
 [node name="GeneratorFill" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_2m616")
