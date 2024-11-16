@@ -27,7 +27,7 @@ size = Vector2(1874, 73)
 position = Vector2(612, 729)
 
 [node name="MurVertical2" parent="." instance=ExtResource("1_2ql7a")]
-position = Vector2(1041, 919)
+position = Vector2(1041, 963)
 
 [node name="MurHorizontal" parent="." instance=ExtResource("2_2nxib")]
 position = Vector2(1574, 380)
