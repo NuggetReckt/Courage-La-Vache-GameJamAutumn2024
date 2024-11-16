@@ -29,10 +29,13 @@ func _physics_process(delta: float) -> void:
 			idle.visible = false
 		return
 	else:
-		if(!activated):
+		if(!activated && get_parent().name != "Tuto"):
 			if(init_timer.is_stopped()):
 				fiding.visible = true
 				init_timer.start()
+		elif(!activated && get_parent().name == "Tuto"):
+			idle.visible = true
+			activated = true
 	
 	if(!activated):
 		return

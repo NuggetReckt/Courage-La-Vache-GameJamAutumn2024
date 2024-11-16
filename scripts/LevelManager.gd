@@ -69,11 +69,11 @@ func set_game_ended() -> void:
 		is_game_ended = true
 
 func _on_day_timer_timeout() -> void:
+	play_music()
 	transition_timer.start()
 
 func _on_transition_timer_timeout() -> void:
 	night = true
-	play_music()
 	
 func play_music() -> void:
 	AudioManager.game_theme.play()
