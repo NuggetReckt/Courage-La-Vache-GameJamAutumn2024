@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://brb1pjk885olg"]
+[gd_scene load_steps=15 format=3 uid="uid://brb1pjk885olg"]
 
 [ext_resource type="Script" path="res://scripts/LevelManager.gd" id="1_7n133"]
 [ext_resource type="PackedScene" uid="uid://btmixqkw76nko" path="res://scenes/GenTest/MurVertical.tscn" id="1_bj5r5"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dt7br5moencsg" path="res://assets/ground.png" id="6_cfhqp"]
 [ext_resource type="PackedScene" uid="uid://dax08101yn5p7" path="res://scenes/player.tscn" id="7_itl5y"]
 [ext_resource type="FontFile" uid="uid://d1cu1o4a8hlpj" path="res://assets/fonts/Joystick.ttf" id="9_q2xl5"]
+[ext_resource type="Texture2D" uid="uid://bvbb4ye16vi5c" path="res://assets/cow_counter_face_alive.png" id="10_tsrvx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msbio"]
 size = Vector2(50, 1121)
@@ -123,6 +124,12 @@ one_shot = true
 
 [node name="TransitionTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="CowCounterFaceAlive" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(1466, 31)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("10_tsrvx")
 
 [connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]
 [connection signal="timeout" from="TransitionTimer" to="." method="_on_transition_timer_timeout"]
