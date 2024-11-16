@@ -22,22 +22,22 @@ func _ready() -> void:
 	
 	if (AudioManager.menu_theme.playing):
 		AudioManager.menu_theme.stop()
+	await get_tree().create_timer(0.5).timeout
+	AudioManager.game_start_sfx.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	set_game_ended()
 	
 	#jour/nuit
-	if(!night):
+	if (!night):
 		$CowCounterFaceAlive.visible = false
-		if(!transition_timer.is_stopped()):
+		if (!transition_timer.is_stopped()):
 			#set alpha
 			var alpha_percentage = (transition_timer.wait_time - transition_timer.time_left)/transition_timer.wait_time
 			find_child("hunter").black_hole.modulate = Color(1,1,1,alpha_percentage)
-
 		else:
 			find_child("hunter").black_hole.modulate = Color(1,1,1,0)
-
 	else:
 		find_child("hunter").black_hole.modulate = Color(1,1,1,1)
 	
@@ -55,11 +55,12 @@ func _process(delta: float) -> void:
 				end_timer.start()
 				print("le chasseur à gagné !")
 			return
+		if (AudioManager.game_theme.playing):
+			AudioManager.game_theme.stop()
 		AudioManager.game_end_sfx.play()
-
 	
-	if(night):
-		if(!$CowCounterFaceAlive.visible):
+	if (night):
+		if (!$CowCounterFaceAlive.visible):
 			$CowCounterFaceAlive.visible = true
 		player_counter.text = str(Main.players_alive_count)
 
@@ -71,7 +72,6 @@ func _on_day_timer_timeout() -> void:
 	transition_timer.start()
 
 func _on_transition_timer_timeout() -> void:
-	AudioManager.game_start_sfx.play()
 	night = true
 	play_music()
 	
