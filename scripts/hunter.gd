@@ -44,8 +44,8 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-	if(Input.is_action_just_pressed("1_find")):
-		if(cooldown.is_stopped()):
+	if (Input.is_action_just_pressed("1_find")):
+		if (cooldown.is_stopped()):
 			_find()
 			cooldown.start()
 			idle.visible = false
@@ -55,9 +55,12 @@ func _physics_process(delta: float) -> void:
 
 func _find():
 	for area in area_2d.get_overlapping_areas():
-		if(area.get_parent().name.contains("player")):
+		if (area.get_parent().name.contains("player")):
 			area.get_parent().die()
+			AudioManager.get_rand_catch().play()
 			pass
+		else:
+			AudioManager.get_rand_catch_attempt().play()
 
 
 func _on_cooldown_timeout() -> void:

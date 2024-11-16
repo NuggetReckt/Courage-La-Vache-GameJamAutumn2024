@@ -11,3 +11,18 @@ extends Node
 @onready var catch_2_sfx: AudioStreamPlayer = $Catch2SFX
 @onready var menu_theme: AudioStreamPlayer = $MenuTheme
 @onready var game_theme: AudioStreamPlayer = $GameTheme
+
+var random = RandomNumberGenerator.new()
+
+var moohs: Array[AudioStreamPlayer] = [mooh_1_sfx, mooh_2_sfx, mooh_3_sfx]
+var catches: Array[AudioStreamPlayer] = [catch_1_sfx, catch_2_sfx]
+var catche_attempts: Array[AudioStreamPlayer] = [catch_attempt_1_sfx, catch_attempt_2_sfx]
+
+func get_rand_mooh() -> AudioStreamPlayer:
+	return moohs[random.randi_range(0, moohs.size())]
+
+func get_rand_catch() -> AudioStreamPlayer:
+	return catches[random.randi_range(0, catches.size())]
+	
+func get_rand_catch_attempt() -> AudioStreamPlayer:
+	return catche_attempts[random.randi_range(0, catche_attempts.size())]
