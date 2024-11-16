@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsrwmeb00vf3q"]
+
+[ext_resource type="Script" path="res://scenes/Levels/main_menu.gd" id="1_iko22"]
+[ext_resource type="Texture2D" uid="uid://bbv181knmlu1q" path="res://assets/Poster Basis COW THING edited.png" id="2_n50sl"]
+[ext_resource type="Texture2D" uid="uid://bjmxdyu1kitx" path="res://assets/title_scene.png" id="3_160tf"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_iko22")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(934, 496)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_n50sl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(956, 544)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_160tf")
