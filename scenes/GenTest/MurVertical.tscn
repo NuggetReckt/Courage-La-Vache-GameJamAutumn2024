@@ -6,13 +6,14 @@
 size = Vector2(46.5, 193)
 
 [node name="MurVertical" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.135, 0.135)
-texture = ExtResource("1_fup5w")
+z_index = -2
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-8.75, -29.5)
 shape = SubResource("RectangleShape2D_7t86d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("1_fup5w")

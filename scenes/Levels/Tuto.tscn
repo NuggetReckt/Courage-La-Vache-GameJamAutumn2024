@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b4h1lkpwl4hrs" path="res://scenes/GenTest/MurHorizontal.tscn" id="2_ixm75"]
 [ext_resource type="PackedScene" uid="uid://bmx4akp13eyvn" path="res://scenes/generator.tscn" id="4_ggekm"]
 [ext_resource type="PackedScene" uid="uid://hpw6u7lu2wns" path="res://scenes/hunter.tscn" id="5_vksto"]
-[ext_resource type="Texture2D" uid="uid://dt7br5moencsg" path="res://assets/ground.png" id="6_ihh35"]
+[ext_resource type="Texture2D" uid="uid://cod6sr7un2kjn" path="res://assets/terrain_real.png" id="6_81hdc"]
 [ext_resource type="PackedScene" uid="uid://dax08101yn5p7" path="res://scenes/player.tscn" id="7_navjm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msbio"]
@@ -25,6 +25,15 @@ script = ExtResource("1_nuefd")
 
 [node name="MurVertical" parent="." instance=ExtResource("1_fbw6u")]
 position = Vector2(534, 783)
+
+[node name="MurVertical2" parent="." instance=ExtResource("1_fbw6u")]
+position = Vector2(537, 982)
+
+[node name="MurVertical3" parent="." instance=ExtResource("1_fbw6u")]
+position = Vector2(1309, 758)
+
+[node name="MurVertical4" parent="." instance=ExtResource("1_fbw6u")]
+position = Vector2(1308, 961)
 
 [node name="MurHorizontal" parent="." instance=ExtResource("2_ixm75")]
 position = Vector2(1424, 685)
@@ -48,10 +57,10 @@ position = Vector2(101, 827)
 position = Vector2(1000, 560)
 
 [node name="Ground" type="Sprite2D" parent="."]
-z_index = -2
+z_index = -3
 position = Vector2(967, 534)
-scale = Vector2(2.55, 2.55)
-texture = ExtResource("6_ihh35")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_81hdc")
 
 [node name="player" parent="." instance=ExtResource("7_navjm")]
 position = Vector2(401, 904)
@@ -85,17 +94,8 @@ shape = SubResource("RectangleShape2D_2s235")
 position = Vector2(600, 854)
 shape = SubResource("RectangleShape2D_cnap8")
 
-[node name="MurVertical2" parent="." instance=ExtResource("1_fbw6u")]
-position = Vector2(537, 982)
-
 [node name="generator2" parent="." instance=ExtResource("4_ggekm")]
 position = Vector2(867, 823)
-
-[node name="MurVertical3" parent="." instance=ExtResource("1_fbw6u")]
-position = Vector2(1309, 758)
-
-[node name="MurVertical4" parent="." instance=ExtResource("1_fbw6u")]
-position = Vector2(1308, 961)
 
 [node name="MurHorizontal5" parent="." instance=ExtResource("2_ixm75")]
 position = Vector2(668, 680)

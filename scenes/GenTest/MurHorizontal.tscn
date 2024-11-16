@@ -6,6 +6,7 @@
 size = Vector2(242, 97)
 
 [node name="MurHorizontal" type="Node2D"]
+z_index = -2
 
 [node name="Area2D" type="Area2D" parent="."]
 

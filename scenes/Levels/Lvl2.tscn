@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dvbdupvebwhq5" path="res://scenes/GenTest/MapSpawn.tscn" id="3_srndc"]
 [ext_resource type="PackedScene" uid="uid://bmx4akp13eyvn" path="res://scenes/generator.tscn" id="4_817ap"]
 [ext_resource type="PackedScene" uid="uid://hpw6u7lu2wns" path="res://scenes/hunter.tscn" id="5_0ej2x"]
-[ext_resource type="Texture2D" uid="uid://dt7br5moencsg" path="res://assets/ground.png" id="6_weiu3"]
 [ext_resource type="PackedScene" uid="uid://dax08101yn5p7" path="res://scenes/player.tscn" id="7_2y2pk"]
+[ext_resource type="Texture2D" uid="uid://cod6sr7un2kjn" path="res://assets/terrain_real.png" id="7_k0d30"]
 [ext_resource type="FontFile" uid="uid://d1cu1o4a8hlpj" path="res://assets/fonts/Joystick.ttf" id="8_7uayh"]
 [ext_resource type="Texture2D" uid="uid://bvbb4ye16vi5c" path="res://assets/cow_counter_face_alive.png" id="9_b2w3a"]
 
@@ -65,10 +65,10 @@ position = Vector2(359, 624)
 position = Vector2(1000, 560)
 
 [node name="Ground" type="Sprite2D" parent="."]
-z_index = -2
+z_index = -3
 position = Vector2(967, 534)
-scale = Vector2(2.55, 2.55)
-texture = ExtResource("6_weiu3")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_k0d30")
 
 [node name="player" parent="." instance=ExtResource("7_2y2pk")]
 position = Vector2(886, 373)
