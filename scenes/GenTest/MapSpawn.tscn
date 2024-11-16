@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dvbdupvebwhq5"]
 
-[ext_resource type="Script" path="res://scenes/GenTest/vache_spawn.gd" id="1_epdr7"]
+[ext_resource type="Script" path="res://scenes/GenTest/vache_spawn.gd" id="1_xubf5"]
 
 [node name="VacheSpawn" type="Node2D"]
-script = ExtResource("1_epdr7")
+script = ExtResource("1_xubf5")
