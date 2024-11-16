@@ -45,6 +45,8 @@ func _process(delta: float) -> void:
 	if (is_game_ended):
 		if (AudioManager.game_theme.playing):
 			AudioManager.game_theme.stop()
+		if (AudioManager.game_theme_no_intro.playing):
+			AudioManager.game_theme_no_intro.stop()
 		AudioManager.game_end_sfx.play()
 		if (Main.generator_charge_count >= 3):
 			cows_victory_screen.visible = true
