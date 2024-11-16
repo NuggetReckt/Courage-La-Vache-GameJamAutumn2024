@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://brb1pjk885olg"]
+[gd_scene load_steps=17 format=3 uid="uid://brb1pjk885olg"]
 
 [ext_resource type="Script" path="res://scripts/LevelManager.gd" id="1_7n133"]
 [ext_resource type="PackedScene" uid="uid://btmixqkw76nko" path="res://scenes/GenTest/MurVertical.tscn" id="1_bj5r5"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dax08101yn5p7" path="res://scenes/player.tscn" id="7_itl5y"]
 [ext_resource type="FontFile" uid="uid://d1cu1o4a8hlpj" path="res://assets/fonts/Joystick.ttf" id="9_q2xl5"]
 [ext_resource type="Texture2D" uid="uid://bvbb4ye16vi5c" path="res://assets/cow_counter_face_alive.png" id="10_tsrvx"]
+[ext_resource type="Texture2D" uid="uid://b76ybdefmsubh" path="res://assets/Victory pannels/Alien_victory_screen.png" id="11_ut2on"]
+[ext_resource type="Texture2D" uid="uid://pxjdmnrrvlsy" path="res://assets/Victory pannels/cows_victory_screen.png" id="12_56x63"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msbio"]
 size = Vector2(50, 1121)
@@ -133,6 +135,22 @@ texture = ExtResource("10_tsrvx")
 [node name="player3" parent="." instance=ExtResource("7_itl5y")]
 position = Vector2(603, 145)
 id = 4
+
+[node name="EndTimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[node name="AlienVictoryScreen" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(958, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_ut2on")
+
+[node name="CowsVictoryScreen" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(958, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_56x63")
 
 [connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]
 [connection signal="timeout" from="TransitionTimer" to="." method="_on_transition_timer_timeout"]
