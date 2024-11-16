@@ -14,5 +14,5 @@ func _process(delta: float) -> void:
 		if (randi()%2==1):
 			get_tree().change_scene_to_file("res://scenes/Levels/Lvl1.tscn")
 		else:
-			get_tree().change_scene_to_file("res://scenes/Levels/Lvl1.tscn")
+			get_tree().change_scene_to_file("res://scenes/Levels/Lvl2.tscn")
 	return
