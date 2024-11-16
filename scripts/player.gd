@@ -76,7 +76,6 @@ func _physics_process(delta: float) -> void:
 	
 	if(Input.is_action_just_pressed(str(id) + "_reveal")):
 		particles.emitting = true
-		print(AudioManager.moohs)
 		AudioManager.get_rand_mooh().play()
 	else:
 		particles.emitting = false
