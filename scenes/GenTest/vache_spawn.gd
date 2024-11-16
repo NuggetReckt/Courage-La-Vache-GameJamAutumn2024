@@ -1,6 +1,7 @@
 extends Node2D
 
-var node = preload("res://scenes/VacheTest/Vache.tscn")
+var vache = preload("res://scenes/GenTest/Vache.tscn")
+
 var tab : Array
 
 # Called when the node enters the scene tree for the first time.
@@ -10,12 +11,12 @@ func _ready():
 	pass # Replace with function body.
 
 func inst():
-	var instance = node.instantiate()
+	var instanceV = vache.instantiate()
 	if (randi()%2)==1:
-		instance.find_child("Sprite2D").flip_h=true
-	instance.position = Vector2(randi()%1050 + 50,randi()%550 + 50)
-	add_child(instance)
-	tab.append(instance)
+		instanceV.find_child("Sprite2D").flip_h=true
+	instanceV.position = Vector2(randi()%1050 + 50,randi()%550 + 50)
+	add_child(instanceV)
+	tab.append(instanceV)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 
