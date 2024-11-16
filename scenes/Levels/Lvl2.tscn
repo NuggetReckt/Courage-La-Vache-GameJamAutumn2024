@@ -29,10 +29,10 @@ size = Vector2(1874, 73)
 script = ExtResource("1_oe6d2")
 
 [node name="MurVertical" parent="." instance=ExtResource("1_2ql7a")]
-position = Vector2(612, 729)
+position = Vector2(621, 924)
 
 [node name="MurVertical2" parent="." instance=ExtResource("1_2ql7a")]
-position = Vector2(1041, 963)
+position = Vector2(1055, 937)
 
 [node name="MurHorizontal" parent="." instance=ExtResource("2_2nxib")]
 position = Vector2(1574, 380)
@@ -52,7 +52,7 @@ position = Vector2(1419, 787)
 [node name="VacheSpawn" parent="." instance=ExtResource("3_srndc")]
 
 [node name="generator" parent="." instance=ExtResource("4_817ap")]
-position = Vector2(1069, 842)
+position = Vector2(1069, 845)
 
 [node name="generator2" parent="." instance=ExtResource("4_817ap")]
 position = Vector2(1620, 54)
@@ -61,7 +61,7 @@ position = Vector2(1620, 54)
 position = Vector2(29, 6)
 
 [node name="generator4" parent="." instance=ExtResource("4_817ap")]
-position = Vector2(359, 624)
+position = Vector2(377, 864)
 
 [node name="hunter" parent="." instance=ExtResource("5_0ej2x")]
 position = Vector2(1051, 611)
@@ -132,7 +132,7 @@ one_shot = true
 one_shot = true
 
 [node name="player3" parent="." instance=ExtResource("7_2y2pk")]
-position = Vector2(199, 496)
+position = Vector2(135, 482)
 id = 4
 
 [node name="EndTimer" type="Timer" parent="."]
@@ -150,6 +150,12 @@ z_index = 4
 position = Vector2(958, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("12_kg5vj")
+
+[node name="MurHorizontal6" parent="." instance=ExtResource("2_2nxib")]
+position = Vector2(473, 788)
+
+[node name="MurHorizontal7" parent="." instance=ExtResource("2_2nxib")]
+position = Vector2(363, 320)
 
 [connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]
 [connection signal="timeout" from="TransitionTimer" to="." method="_on_transition_timer_timeout"]
