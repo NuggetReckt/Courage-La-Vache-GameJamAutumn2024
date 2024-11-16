@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://ni026ge8jep5"]
+[gd_scene load_steps=11 format=3 uid="uid://ni026ge8jep5"]
 
+[ext_resource type="FontFile" uid="uid://d1cu1o4a8hlpj" path="res://assets/fonts/Joystick.ttf" id="1_ai3sy"]
 [ext_resource type="Texture2D" uid="uid://dt7br5moencsg" path="res://assets/ground.png" id="1_t2q83"]
 [ext_resource type="PackedScene" uid="uid://dvbdupvebwhq5" path="res://scenes/GenTest/MapSpawn.tscn" id="2_uakia"]
 [ext_resource type="PackedScene" uid="uid://bmx4akp13eyvn" path="res://scenes/generator.tscn" id="3_7y5e8"]
@@ -20,6 +21,19 @@ size = Vector2(1874, 73)
 
 [node name="main" type="Node2D"]
 
+[node name="PlayerCounter" type="Label" parent="."]
+z_index = 3
+offset_left = 1172.0
+offset_top = -213.0
+offset_right = 1457.0
+offset_bottom = -141.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ai3sy")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="Ground" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(585, 294)
@@ -30,7 +44,7 @@ texture = ExtResource("1_t2q83")
 position = Vector2(-352, -196)
 
 [node name="hunter" parent="." instance=ExtResource("4_addal")]
-position = Vector2(572, 329)
+position = Vector2(600, 196)
 
 [node name="player" parent="." instance=ExtResource("5_qulml")]
 position = Vector2(180, 229)
