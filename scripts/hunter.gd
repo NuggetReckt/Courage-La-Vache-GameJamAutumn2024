@@ -6,16 +6,28 @@ extends CharacterBody2D
 #@onready var filter: Sprite2D = $filter
 @onready var cooldown: Timer = $Cooldown
 @onready var black_hole: Sprite2D = $MasqueNoirHaloPetit
+@onready var fiding: Sprite2D = $Fiding
+@onready var idle: Sprite2D = $Idle
+
+func _ready() -> void:
+	fiding.visible = false
+	idle.visible = true
+	cooldown.stop()
 
 func _physics_process(delta: float) -> void:
 
 	#print(name + " has id " + str(id))
 	
-	#if(!cooldown.is_stopped()):
-	#	return
+	if(!cooldown.is_stopped()):
+		return
 	
 	if(!get_parent().night):
+		if(idle.visible):
+			idle.visible = false
 		return
+	else:
+		if(!idle.visible):
+			idle.visible = true
 	
 	if id != 1: return #au cas ou c pas le hunter mais pas possible
 
@@ -36,6 +48,8 @@ func _physics_process(delta: float) -> void:
 		if(cooldown.is_stopped()):
 			_find()
 			cooldown.start()
+			idle.visible = false
+			fiding.visible = true
 		else:
 			pass #feedback si find en cooldown ?
 
@@ -44,3 +58,9 @@ func _find():
 		if(area.get_parent().name.contains("player")):
 			area.get_parent().die()
 			pass
+
+
+func _on_cooldown_timeout() -> void:
+	idle.visible = true
+	fiding.visible = false
+	pass # Replace with function body.

@@ -13,9 +13,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
+		
 	#jour/nuit
 	if(!night):
+		$CowCounterFaceAlive.visible = false
 		if(!transition_timer.is_stopped()):
 			#set alpha
 			var alpha_percentage = (transition_timer.wait_time - transition_timer.time_left)/transition_timer.wait_time
@@ -35,7 +36,10 @@ func _process(delta: float) -> void:
 		print("le chasseur à gagné !")
 		get_tree().change_scene_to_file("res://scenes/HunterWin.tscn")
 	
-	player_counter.text = str(Main.players_alive_count)
+	if(night):
+		if(!$CowCounterFaceAlive.visible):
+			$CowCounterFaceAlive.visible = true
+		player_counter.text = str(Main.players_alive_count)
 
 
 

@@ -1,22 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://hpw6u7lu2wns"]
+[gd_scene load_steps=7 format=3 uid="uid://hpw6u7lu2wns"]
 
 [ext_resource type="Script" path="res://scripts/hunter.gd" id="1_hyoou"]
 [ext_resource type="Texture2D" uid="uid://dsefkdwytxseg" path="res://assets/masque_noir_halo.png" id="2_55hv8"]
+[ext_resource type="Texture2D" uid="uid://cdosbj5bc4eq2" path="res://assets/crosshair/crosshair_blue.png" id="2_ovvgx"]
+[ext_resource type="Texture2D" uid="uid://bk51hirrr405h" path="res://assets/crosshair/crosshair_missed.png" id="4_2dho1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_myg1l"]
 radius = 41.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2wrwq"]
-radius = 118.0
-height = 378.81
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhai5"]
+radius = 29.0
 
 [node name="hunter" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_hyoou")
-speed = 210.0
+speed = 250.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(2, 0)
 shape = SubResource("CircleShape2D_myg1l")
 
@@ -25,9 +27,10 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(6, 6)
+visible = false
+position = Vector2(3, 2)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_2wrwq")
+shape = SubResource("CircleShape2D_bhai5")
 
 [node name="MasqueNoirHaloPetit" type="Sprite2D" parent="."]
 z_index = 1
@@ -36,5 +39,17 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_55hv8")
 
 [node name="Cooldown" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 1.5
 one_shot = true
+
+[node name="Fiding" type="Sprite2D" parent="."]
+position = Vector2(6, 2)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("4_2dho1")
+
+[node name="Idle" type="Sprite2D" parent="."]
+position = Vector2(6, 2)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_ovvgx")
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
