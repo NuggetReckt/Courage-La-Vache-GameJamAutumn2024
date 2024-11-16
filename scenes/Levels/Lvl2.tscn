@@ -59,7 +59,6 @@ position = Vector2(29, 6)
 position = Vector2(359, 624)
 
 [node name="hunter" parent="." instance=ExtResource("5_0ej2x")]
-visible = false
 position = Vector2(1000, 560)
 
 [node name="Ground" type="Sprite2D" parent="."]
