@@ -25,11 +25,27 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if(!get_parent().night):
+		#name
 		label.text = "joueur " + str(id-1)
-		return
+		#rotatation
+		sprite.rotation += 0.01*speed*delta
+		z_index = 3
+		
+		if(sprite.scale.x < 0.15):
+			sprite.scale.x += 0.01*10*delta
+			sprite.scale.y += 0.01*10*delta
+		#elif(sprite.scale.x > 0.09 && sprite.scale.x < 0.1):
+		#	sprite.scale.x -= 0.01*10*delta
+		#	sprite.scale.y -= 0.01*10*delta
+
+		return #bloque les controles
 	else:
 		if(label.text != ""):
 			label.text = ""
+			sprite.rotation = 0
+			sprite.scale.x = 0.09
+			sprite.scale.y = 0.09
+			z_index = -1
 	
 	#print(name + " has id " + str(id))
 

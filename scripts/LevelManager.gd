@@ -17,6 +17,7 @@ func _process(delta: float) -> void:
 	#jour/nuit
 	if(!night):
 		if(!transition_timer.is_stopped()):
+			#set alpha
 			var alpha_percentage = (transition_timer.wait_time - transition_timer.time_left)/transition_timer.wait_time
 			find_child("hunter").black_hole.modulate = Color(1,1,1,alpha_percentage)
 
