@@ -14,6 +14,7 @@ extends Node
 @onready var game_theme_no_intro: AudioStreamPlayer = $GameThemeNoIntro
 @onready var generator_fill: AudioStreamPlayer = $GeneratorFill
 @onready var generator_full: AudioStreamPlayer = $GeneratorFull
+@onready var yooo_sfx: AudioStreamPlayer = $YoooSFX
 
 var random = RandomNumberGenerator.new()
 
