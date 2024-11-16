@@ -14,8 +14,8 @@ func _process(delta: float) -> void:
 		var lvlselect: int = randi()%3
 		if (lvlselect==1):
 			get_tree().change_scene_to_file("res://scenes/Levels/Lvl1.tscn")
-		else:
-			if (lvlselect==2):
-				get_tree().change_scene_to_file("res://scenes/Levels/Lvl2.tscn")
-		get_tree().change_scene_to_file("res://scenes/Levels/Lvl3.tscn")
+		elif (lvlselect==2):
+			get_tree().change_scene_to_file("res://scenes/Levels/Lvl2.tscn")
+		else: 
+			get_tree().change_scene_to_file("res://scenes/Levels/Lvl3.tscn")
 	return
