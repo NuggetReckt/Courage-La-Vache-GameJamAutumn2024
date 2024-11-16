@@ -11,6 +11,7 @@ extends Node
 @onready var catch_2_sfx: AudioStreamPlayer = $Catch2SFX
 @onready var menu_theme: AudioStreamPlayer = $MenuTheme
 @onready var game_theme: AudioStreamPlayer = $GameTheme
+@onready var game_theme_no_intro: AudioStreamPlayer = $GameThemeNoIntro
 @onready var generator_fill: AudioStreamPlayer = $GeneratorFill
 @onready var generator_full: AudioStreamPlayer = $GeneratorFull
 

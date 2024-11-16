@@ -63,5 +63,10 @@ func _on_day_timer_timeout() -> void:
 func _on_transition_timer_timeout() -> void:
 	AudioManager.game_start_sfx.play()
 	night = true
+	play_music()
+	
+func play_music() -> void:
 	await get_tree().create_timer(AudioManager.game_start_sfx.stream.get_length() + 1).timeout
 	AudioManager.game_theme.play()
+	await get_tree().create_timer(AudioManager.game_theme.stream.get_length()).timeout
+	AudioManager.game_theme_no_intro.play()
