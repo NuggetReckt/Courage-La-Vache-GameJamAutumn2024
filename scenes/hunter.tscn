@@ -39,7 +39,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_55hv8")
 
 [node name="Cooldown" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 2.5
 one_shot = true
 
 [node name="Fiding" type="Sprite2D" parent="."]
@@ -52,4 +52,9 @@ position = Vector2(6, 2)
 scale = Vector2(0.03, 0.03)
 texture = ExtResource("2_ovvgx")
 
+[node name="InitTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="timeout" from="InitTimer" to="." method="_on_init_timer_timeout"]

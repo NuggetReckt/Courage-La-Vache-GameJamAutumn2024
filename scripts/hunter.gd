@@ -8,16 +8,19 @@ extends CharacterBody2D
 @onready var black_hole: Sprite2D = $MasqueNoirHaloPetit
 @onready var fiding: Sprite2D = $Fiding
 @onready var idle: Sprite2D = $Idle
+var activated:bool
+@onready var init_timer: Timer = $InitTimer
 
 func _ready() -> void:
 	fiding.visible = false
-	idle.visible = true
-	cooldown.stop()
+	idle.visible = false
+	activated = false
 
 func _physics_process(delta: float) -> void:
 
 	#print(name + " has id " + str(id))
-	
+	if id != 1: return #au cas ou c pas le hunter mais pas possible
+
 	if(!cooldown.is_stopped()):
 		return
 	
@@ -26,11 +29,14 @@ func _physics_process(delta: float) -> void:
 			idle.visible = false
 		return
 	else:
-		if(!idle.visible):
-			idle.visible = true
+		if(!activated):
+			if(init_timer.is_stopped()):
+				fiding.visible = true
+				init_timer.start()
 	
-	if id != 1: return #au cas ou c pas le hunter mais pas possible
-
+	if(!activated):
+		return
+	
 	#Movement globals
 	var input_vector : Vector2 = Vector2.ZERO
 	input_vector.x = Input.get_action_strength(str(id) + "_right") - Input.get_action_strength(str(id) + "_left")
@@ -66,3 +72,9 @@ func _on_cooldown_timeout() -> void:
 	idle.visible = true
 	fiding.visible = false
 	pass # Replace with function body.
+
+
+func _on_init_timer_timeout() -> void:
+	fiding.visible = false
+	idle.visible = true
+	activated = true

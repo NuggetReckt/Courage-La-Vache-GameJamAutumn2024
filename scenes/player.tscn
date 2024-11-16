@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dax08101yn5p7"]
+[gd_scene load_steps=11 format=3 uid="uid://dax08101yn5p7"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xef8h"]
 [ext_resource type="Texture2D" uid="uid://b876uxp0pdkur" path="res://assets/anims/vache/courage-2.png" id="2_rw3df"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dxohcwvmvimpi" path="res://assets/anims/vache/courage_-1.png" id="4_30kki"]
 [ext_resource type="Texture2D" uid="uid://bacyk1jqv7ndn" path="res://assets/mieuuh.png" id="5_pm824"]
 [ext_resource type="FontFile" uid="uid://d1cu1o4a8hlpj" path="res://assets/fonts/Joystick.ttf" id="6_wpcvc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmgeq"]
+size = Vector2(133, 66)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0pla8"]
 radius = 42.2966
@@ -41,7 +44,8 @@ speed = 200.0
 id = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_0pla8")
+position = Vector2(-12, 9)
+shape = SubResource("RectangleShape2D_tmgeq")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2

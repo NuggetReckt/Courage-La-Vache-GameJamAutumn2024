@@ -12,6 +12,9 @@ func _ready() -> void:
 	day_timer.start()
 	is_game_ended = false
 	night = false
+	Main.generator_charge_count = 0
+	Main.players_alive_count = 3
+
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,11 +39,11 @@ func _process(delta: float) -> void:
 	if (is_game_ended):
 		if (Main.generator_charge_count >= 3):
 			print("les vaches ont gagné !")
-			get_tree().change_scene_to_file("res://scenes/CowWin.tscn")
+			get_tree().change_scene_to_file("res://scenes/Levels/MainMenu.tscn")
 			return
 		if (Main.players_alive_count <= 0):
 			print("le chasseur à gagné !")
-			get_tree().change_scene_to_file("res://scenes/HunterWin.tscn")
+			get_tree().change_scene_to_file("res://scenes/Levels/MainMenu.tscn")
 			return
 		AudioManager.game_end_sfx.play()
 	
