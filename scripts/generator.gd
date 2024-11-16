@@ -26,6 +26,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var overlapping_areas = area_2d.get_overlapping_areas()
 	
+	#print(time_held)
+	
 	for area: Area2D in overlapping_areas:
 		if (is_player(area)):
 			var player: Node = area.get_parent()
@@ -34,6 +36,7 @@ func _process(delta: float) -> void:
 				time_held = time_held + 0.01
 				if (time_held >= 2):
 					toggle_bucket()
+					print("hi")
 					time_held = 0
 			else:
 				time_held = 0
@@ -42,7 +45,7 @@ func _process(delta: float) -> void:
 func toggle_bucket() -> void:
 	var fill_count: int = Main.get_bucket_fill_count()
 	var state: Main.BUCKET_STATE =  Main.get_bucket_state()
-	var new_state: Main.BUCKET_STATE
+	var new_state: Main.BUCKET_STATE = state
 	
 	if (state + 1 >= Main.BUCKET_STATE.size()):
 		new_state = 0
@@ -50,10 +53,13 @@ func toggle_bucket() -> void:
 	else:
 		new_state += 1
 	
+	print("state : " + str(state))
+	print("new state : " + str(new_state))
+	
 	BUCKET_SPRITES.get(state).visible = false
 	BUCKET_SPRITES.get(new_state).visible = true
 	
-	Main.set_bucket_state(state)
+	Main.set_bucket_state(new_state)
 
 func is_player(area: Area2D) -> bool:
 	return area.get_parent().name.contains("player")
