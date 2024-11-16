@@ -11,8 +11,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	find_child("hunter").black_hole.modulate = Color(1,1,1,0.5)
 	if (Main.generator_charge_count >= 3):
-		if (randi()%2==1):
+		var lvlselect: int = randi()%3
+		if (lvlselect==1):
 			get_tree().change_scene_to_file("res://scenes/Levels/Lvl1.tscn")
 		else:
-			get_tree().change_scene_to_file("res://scenes/Levels/Lvl1.tscn")
+			if (lvlselect==2):
+				get_tree().change_scene_to_file("res://scenes/Levels/Lvl2.tscn")
+		get_tree().change_scene_to_file("res://scenes/Levels/Lvl3.tscn")
 	return
