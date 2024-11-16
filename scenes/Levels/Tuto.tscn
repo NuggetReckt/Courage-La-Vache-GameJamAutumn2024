@@ -24,19 +24,19 @@ size = Vector2(1874, 73)
 script = ExtResource("1_nuefd")
 
 [node name="MurVertical" parent="." instance=ExtResource("1_fbw6u")]
-position = Vector2(1070, 129)
+position = Vector2(534, 783)
 
 [node name="MurHorizontal" parent="." instance=ExtResource("2_ixm75")]
-position = Vector2(1574, 380)
+position = Vector2(1424, 685)
 
 [node name="MurHorizontal2" parent="." instance=ExtResource("2_ixm75")]
-position = Vector2(1816, 380)
+position = Vector2(1671, 685)
 
 [node name="MurHorizontal3" parent="." instance=ExtResource("2_ixm75")]
-position = Vector2(369, 347)
+position = Vector2(372, 673)
 
 [node name="MurHorizontal4" parent="." instance=ExtResource("2_ixm75")]
-position = Vector2(122, 348)
+position = Vector2(129, 674)
 
 [node name="generator" parent="." instance=ExtResource("4_ggekm")]
 position = Vector2(1609, 822)
@@ -45,22 +45,20 @@ position = Vector2(1609, 822)
 position = Vector2(101, 827)
 
 [node name="hunter" parent="." instance=ExtResource("5_vksto")]
-visible = false
 position = Vector2(1000, 560)
 
 [node name="Ground" type="Sprite2D" parent="."]
-visible = false
 z_index = -2
 position = Vector2(967, 534)
 scale = Vector2(2.55, 2.55)
 texture = ExtResource("6_ihh35")
 
 [node name="player" parent="." instance=ExtResource("7_navjm")]
-position = Vector2(755, 602)
+position = Vector2(401, 904)
 id = 2
 
 [node name="player2" parent="." instance=ExtResource("7_navjm")]
-position = Vector2(1353, 615)
+position = Vector2(1515, 934)
 id = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -72,17 +70,41 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
-position = Vector2(-336, 270)
+position = Vector2(-374, 270)
 shape = SubResource("RectangleShape2D_msbio")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="walls"]
-position = Vector2(577, -261)
+position = Vector2(575, 403)
 shape = SubResource("RectangleShape2D_8m07d")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="walls"]
-position = Vector2(1510.5, 266.5)
+position = Vector2(1567, 272)
 shape = SubResource("RectangleShape2D_2s235")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="walls"]
 position = Vector2(600, 854)
 shape = SubResource("RectangleShape2D_cnap8")
+
+[node name="MurVertical2" parent="." instance=ExtResource("1_fbw6u")]
+position = Vector2(537, 982)
+
+[node name="generator2" parent="." instance=ExtResource("4_ggekm")]
+position = Vector2(867, 823)
+
+[node name="MurVertical3" parent="." instance=ExtResource("1_fbw6u")]
+position = Vector2(1309, 758)
+
+[node name="MurVertical4" parent="." instance=ExtResource("1_fbw6u")]
+position = Vector2(1308, 961)
+
+[node name="MurHorizontal5" parent="." instance=ExtResource("2_ixm75")]
+position = Vector2(668, 680)
+
+[node name="MurHorizontal6" parent="." instance=ExtResource("2_ixm75")]
+position = Vector2(913, 681)
+
+[node name="MurHorizontal7" parent="." instance=ExtResource("2_ixm75")]
+position = Vector2(1157, 679)
+
+[node name="MurHorizontal8" parent="." instance=ExtResource("2_ixm75")]
+position = Vector2(1918, 683)

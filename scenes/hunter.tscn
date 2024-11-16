@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://hpw6u7lu2wns"]
 
 [ext_resource type="Script" path="res://scripts/hunter.gd" id="1_hyoou"]
-[ext_resource type="Texture2D" uid="uid://mdkybv486ddn" path="res://assets/masque_noir_halo__petit.png" id="2_epnuv"]
+[ext_resource type="Texture2D" uid="uid://dsefkdwytxseg" path="res://assets/masque_noir_halo.png" id="2_55hv8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_myg1l"]
 radius = 41.0
@@ -33,7 +33,7 @@ shape = SubResource("CapsuleShape2D_2wrwq")
 z_index = 1
 position = Vector2(222, -191)
 scale = Vector2(2, 2)
-texture = ExtResource("2_epnuv")
+texture = ExtResource("2_55hv8")
 
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 3.0
