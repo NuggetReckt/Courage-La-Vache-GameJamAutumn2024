@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4h1lkpwl4hrs"]
 
-[ext_resource type="Texture2D" uid="uid://bwq0sh07i6bvp" path="res://assets/barrier_front_Nuit.png" id="1_sbawi"]
+[ext_resource type="Texture2D" uid="uid://c0wpf7hb2lpkg" path="res://assets/barrier_front.png" id="1_1bcsa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmsy7"]
 size = Vector2(168, 47)
@@ -15,4 +15,4 @@ shape = SubResource("RectangleShape2D_dmsy7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.07, 0.07)
-texture = ExtResource("1_sbawi")
+texture = ExtResource("1_1bcsa")

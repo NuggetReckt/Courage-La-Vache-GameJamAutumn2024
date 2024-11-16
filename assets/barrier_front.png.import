@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwth2di2cy2da"
-path="res://.godot/imported/barrier_side_Nuit.png-48edd9a381c61fb0e7e3bc0710e61f63.ctex"
+uid="uid://c0wpf7hb2lpkg"
+path="res://.godot/imported/barrier_front.png-2d1c9876fb0fecbb0262e9aeb8915abe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/barrier_side_Nuit.png"
-dest_files=["res://.godot/imported/barrier_side_Nuit.png-48edd9a381c61fb0e7e3bc0710e61f63.ctex"]
+source_file="res://assets/barrier_front.png"
+dest_files=["res://.godot/imported/barrier_front.png-2d1c9876fb0fecbb0262e9aeb8915abe.ctex"]
 
 [params]
 
