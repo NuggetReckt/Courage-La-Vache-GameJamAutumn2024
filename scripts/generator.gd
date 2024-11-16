@@ -54,7 +54,7 @@ func toggle_generator() -> void:
 		Main.set_generator_charge_count(fill_count + 1)
 	
 	GENERATOR_SPRITES.get(state).visible = false
-	GENERATOR_SPRITES.get(new_state).visible = true
+	GENERATOR_SPRITES.get(new_state).visible = true 
 	
 	if (new_state == GENERATOR_STATE.FULL):
 		AudioManager.generator_full.play()
