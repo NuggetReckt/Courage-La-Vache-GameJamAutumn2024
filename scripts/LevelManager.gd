@@ -76,7 +76,6 @@ func _on_transition_timer_timeout() -> void:
 	play_music()
 	
 func play_music() -> void:
-	await get_tree().create_timer(3).timeout
 	AudioManager.game_theme.play()
 	await get_tree().create_timer(AudioManager.game_theme.stream.get_length()).timeout
 	AudioManager.game_theme_no_intro.play()
