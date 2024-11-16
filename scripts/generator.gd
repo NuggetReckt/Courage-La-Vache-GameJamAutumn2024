@@ -16,16 +16,22 @@ func _process(delta: float) -> void:
 	
 	for area: Area2D in overlapping_areas:
 		if (is_player(area)):
-			print("Lets goo")
+			var player: Node = area.get_parent()
+		
+			if (Input.is_action_just_pressed(str(player.getId()) + "_fill")):
+				toggle_bucket()
 	pass
 	
 func toggle_bucket() -> void:
+	var fill_count: int = Main.get_bucket_fill_count()
+	
 	if (bucket.visible):
 		bucket.visible = false
 		empty_bucket.visible = true
 	else:
 		bucket.visible = true
 		empty_bucket.visible = false
-	
+		Main.set_bucket_fill_count(fill_count + 1)
+
 func is_player(area: Area2D) -> bool:
 	return area.get_parent().name.contains("player")
