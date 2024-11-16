@@ -63,6 +63,8 @@ func _physics_process(delta: float) -> void:
 			pass #feedback si find en cooldown ?
 
 func _find():
+	if(get_parent().name == "Tuto"):
+		return
 	for area in area_2d.get_overlapping_areas():
 		if (area.get_parent().name.contains("player")):
 			area.get_parent().die()
