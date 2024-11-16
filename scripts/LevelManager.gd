@@ -63,6 +63,7 @@ func _on_day_timer_timeout() -> void:
 func _on_transition_timer_timeout() -> void:
 	AudioManager.game_start_sfx.play()
 	night = true
+	
 	play_music()
 	
 func play_music() -> void:
