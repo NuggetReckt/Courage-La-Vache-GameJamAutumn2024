@@ -14,8 +14,9 @@ func _ready() -> void:
 	night = false
 	Main.generator_charge_count = 0
 	Main.players_alive_count = 3
-
-	pass # Replace with function body.
+	
+	if (AudioManager.menu_theme.playing):
+		AudioManager.menu_theme.stop()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -62,3 +63,5 @@ func _on_day_timer_timeout() -> void:
 func _on_transition_timer_timeout() -> void:
 	AudioManager.game_start_sfx.play()
 	night = true
+	await get_tree().create_timer(AudioManager.game_start_sfx.stream.get_length() + 1).timeout
+	AudioManager.game_theme.play()

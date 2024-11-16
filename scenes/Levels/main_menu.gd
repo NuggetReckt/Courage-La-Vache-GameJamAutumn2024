@@ -6,7 +6,7 @@ var start: bool = false
 func _ready():
 	Main.generator_charge_count = 0
 	Main.players_alive_count = 3
-	pass # Replace with function body.
+	AudioManager.menu_theme.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
