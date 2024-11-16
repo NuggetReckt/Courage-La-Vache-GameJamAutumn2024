@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var id : int = 1
 @onready var sprite: Sprite2D = $MasqueNoirHaloJaune
 @onready var area_2d: Area2D = $Area2D
+@onready var filter: Sprite2D = $filter
 
 func _physics_process(delta: float) -> void:
 

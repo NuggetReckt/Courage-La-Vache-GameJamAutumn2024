@@ -10,7 +10,7 @@
 radius = 91.022
 
 [node name="generator" type="Node2D"]
-z_index = 1
+z_index = 2
 script = ExtResource("1_bmxyn")
 
 [node name="Bucket" type="Sprite2D" parent="."]

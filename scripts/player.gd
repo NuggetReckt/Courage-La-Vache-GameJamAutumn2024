@@ -4,11 +4,24 @@ extends CharacterBody2D
 @export var id : int
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var particles: CPUParticles2D = $CPUParticles2D
+@onready var death_timer: Timer = $Death_Timer
+
+var dead : bool
 
 func _ready() -> void:
 	z_index = -1
+	dead = false
+
+func _process(delta: float) -> void:
+	if(dead):
+		position.y -= speed * delta
+		rotation += 0.01*speed*delta
+		
 
 func _physics_process(delta: float) -> void:
+	
+	if(dead):
+		return
 	
 	#print(name + " has id " + str(id))
 
@@ -46,9 +59,15 @@ func _physics_process(delta: float) -> void:
 
 
 func die():
-	#faire un feedback de mort
-	queue_free()
-	pass
+	dead = true
+	death_timer.start()
+	set_collision_layer_value(1, false)
+	set_collision_mask_value(1, false)
+	z_index = 3
+	
 
 func getId():
 	return id
+
+func _on_death_timer_timeout() -> void:
+	queue_free()
