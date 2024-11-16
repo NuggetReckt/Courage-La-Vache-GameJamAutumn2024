@@ -3,16 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://c0wpf7hb2lpkg" path="res://assets/barrier_front.png" id="1_1bcsa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmsy7"]
-size = Vector2(168, 47)
+size = Vector2(242, 97)
 
 [node name="MurHorizontal" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(4, -7.5)
+position = Vector2(4, -16.5)
 shape = SubResource("RectangleShape2D_dmsy7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.07, 0.07)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_1bcsa")

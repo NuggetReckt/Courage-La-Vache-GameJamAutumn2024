@@ -3,11 +3,18 @@ extends Node2D
 var vache = preload("res://scenes/GenTest/Vache.tscn")
 
 var tab : Array
+var tabMur : Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in range(25):
 		inst()
+		
+	for child in get_parent().get_children():
+		if child.name.contains("Mur"):
+			tabMur.append(child)
+	
+	tabMur.append_array(tab)
 	pass # Replace with function body.
 
 func inst():
@@ -22,10 +29,11 @@ func inst():
 
 func _process(delta):
 	for i in tab:
-		for j in tab:
+		for j in tabMur:
 			if i==j :
 				continue
-			while i.find_child("Area2D").overlaps_area(j.find_child("Area2D")) :
+			while i.find_child("Area2D").overlaps_area(j.find_child("Area2D")):
+				print(j.name)
 				remove_child(i)
 				i.position = Vector2(randi()%1750 + 50,randi()%950 + 50)
 				add_child(i)

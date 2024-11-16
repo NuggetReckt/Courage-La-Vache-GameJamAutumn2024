@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://brb1pjk885olg"]
+
+[ext_resource type="PackedScene" uid="uid://btmixqkw76nko" path="res://scenes/GenTest/MurVertical.tscn" id="1_bj5r5"]
+[ext_resource type="PackedScene" uid="uid://b4h1lkpwl4hrs" path="res://scenes/GenTest/MurHorizontal.tscn" id="2_2halj"]
+[ext_resource type="PackedScene" uid="uid://dvbdupvebwhq5" path="res://scenes/GenTest/MapSpawn.tscn" id="3_oktnj"]
+
+[node name="Lvl1" type="Node2D"]
+
+[node name="MurVertical" parent="." instance=ExtResource("1_bj5r5")]
+position = Vector2(400, 137)
+
+[node name="MurVertical2" parent="." instance=ExtResource("1_bj5r5")]
+position = Vector2(400, 332)
+
+[node name="MurHorizontal" parent="." instance=ExtResource("2_2halj")]
+position = Vector2(1574, 380)
+
+[node name="MurHorizontal2" parent="." instance=ExtResource("2_2halj")]
+position = Vector2(1816, 380)
+
+[node name="MurHorizontal3" parent="." instance=ExtResource("2_2halj")]
+position = Vector2(840, 766)
+
+[node name="MurHorizontal4" parent="." instance=ExtResource("2_2halj")]
+position = Vector2(1082, 766)
+
+[node name="MurHorizontal5" parent="." instance=ExtResource("2_2halj")]
+position = Vector2(1324, 766)
+
+[node name="VacheSpawn" parent="." instance=ExtResource("3_oktnj")]
