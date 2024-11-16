@@ -11,18 +11,20 @@ extends Node
 @onready var catch_2_sfx: AudioStreamPlayer = $Catch2SFX
 @onready var menu_theme: AudioStreamPlayer = $MenuTheme
 @onready var game_theme: AudioStreamPlayer = $GameTheme
+@onready var generator_fill: AudioStreamPlayer = $GeneratorFill
+@onready var generator_full: AudioStreamPlayer = $GeneratorFull
 
 var random = RandomNumberGenerator.new()
 
-@onready var moohs: Array[AudioStreamPlayer] = [mooh_1_sfx, mooh_2_sfx, mooh_3_sfx]
-@onready var catches: Array[AudioStreamPlayer] = [catch_1_sfx, catch_2_sfx]
-@onready var catche_attempts: Array[AudioStreamPlayer] = [catch_attempt_1_sfx, catch_attempt_2_sfx]
+var moohs: Array[AudioStreamPlayer] = [mooh_1_sfx, mooh_2_sfx, mooh_3_sfx]
+var catches: Array[AudioStreamPlayer] = [catch_1_sfx, catch_2_sfx]
+var catche_attempts: Array[AudioStreamPlayer] = [catch_attempt_1_sfx, catch_attempt_2_sfx]
 
 func get_rand_mooh() -> AudioStreamPlayer:
-	return moohs[random.randi_range(0, moohs.size() - 1)]
+	return moohs[random.randi_range(0, moohs.size())]
 
 func get_rand_catch() -> AudioStreamPlayer:
-	return catches[random.randi_range(0, catches.size() -1)]
+	return catches[random.randi_range(0, catches.size())]
 	
 func get_rand_catch_attempt() -> AudioStreamPlayer:
-	return catche_attempts[random.randi_range(0, catche_attempts.size() - 1)]
+	return catche_attempts[random.randi_range(0, catche_attempts.size())]

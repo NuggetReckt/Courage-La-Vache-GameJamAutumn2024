@@ -56,6 +56,11 @@ func toggle_generator() -> void:
 	GENERATOR_SPRITES.get(state).visible = false
 	GENERATOR_SPRITES.get(new_state).visible = true
 	
+	if (new_state == GENERATOR_STATE.FULL):
+		AudioManager.generator_full.play()
+	else:
+		AudioManager.generator_fill.play()
+	
 	current_generator_state = new_state
 	
 func get_current_generator_state() -> GENERATOR_STATE:

@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://bv5d6qt2x13q"]
+[gd_scene load_steps=15 format=3 uid="uid://bv5d6qt2x13q"]
 
-[ext_resource type="Script" path="res://scenes/audio_manager.gd" id="1_wh808"]
+[ext_resource type="Script" path="res://scripts/audio_manager.gd" id="1_wh808"]
 [ext_resource type="AudioStream" uid="uid://bgl3g7iattxwf" path="res://assets/sounds/mooh_1.wav" id="2_kgp3x"]
 [ext_resource type="AudioStream" uid="uid://l2hevifpc36h" path="res://assets/sounds/mooh_2.wav" id="3_1w3ns"]
 [ext_resource type="AudioStream" uid="uid://deq2c52ycmna0" path="res://assets/sounds/mooh_3.wav" id="4_ohma1"]
@@ -12,6 +12,8 @@
 [ext_resource type="AudioStream" uid="uid://khobao55auly" path="res://assets/sounds/catch_2.wav" id="10_2je0g"]
 [ext_resource type="AudioStream" uid="uid://70agy2h2g4vx" path="res://assets/sounds/menu_theme.wav" id="11_ynaqd"]
 [ext_resource type="AudioStream" uid="uid://bi4t8e4w2nncf" path="res://assets/sounds/game_theme.wav" id="12_jmnoc"]
+[ext_resource type="AudioStream" uid="uid://dk8222abbfqoy" path="res://assets/sounds/generator_fill.wav" id="13_2m616"]
+[ext_resource type="AudioStream" uid="uid://c1bdvy6opqeep" path="res://assets/sounds/generator_full.wav" id="14_kdljn"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_wh808")
@@ -48,3 +50,9 @@ stream = ExtResource("11_ynaqd")
 
 [node name="GameTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_jmnoc")
+
+[node name="GeneratorFill" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_2m616")
+
+[node name="GeneratorFull" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_kdljn")

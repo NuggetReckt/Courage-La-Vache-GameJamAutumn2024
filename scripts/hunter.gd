@@ -58,9 +58,8 @@ func _find():
 		if (area.get_parent().name.contains("player")):
 			area.get_parent().die()
 			AudioManager.get_rand_catch().play()
-			pass
-		else:
-			AudioManager.get_rand_catch_attempt().play()
+			return
+	AudioManager.get_rand_catch_attempt().play()
 
 
 func _on_cooldown_timeout() -> void:

@@ -9,5 +9,6 @@ func _ready():
 func _process(delta):
 	if (randi()%5000==1):
 		find_child("CPUParticles2D").emitting = true
+		AudioManager.get_rand_mooh().play()
 		await get_tree().create_timer(1.5).timeout
 		find_child("CPUParticles2D").emitting = false
