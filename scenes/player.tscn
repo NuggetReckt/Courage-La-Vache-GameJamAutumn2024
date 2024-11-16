@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dax08101yn5p7"]
+[gd_scene load_steps=9 format=3 uid="uid://dax08101yn5p7"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xef8h"]
 [ext_resource type="Texture2D" uid="uid://b876uxp0pdkur" path="res://assets/anims/courage-2.png" id="2_rw3df"]
 [ext_resource type="Texture2D" uid="uid://qrgkpr1nteuy" path="res://assets/anims/courage-3.png" id="3_ci52g"]
 [ext_resource type="Texture2D" uid="uid://dxohcwvmvimpi" path="res://assets/anims/courage_-1.png" id="4_30kki"]
+[ext_resource type="Texture2D" uid="uid://bacyk1jqv7ndn" path="res://assets/mieuuh.png" id="5_pm824"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0pla8"]
 radius = 45.0999
@@ -25,8 +26,12 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 3.0
+"speed": 7.0
 }]
+
+[sub_resource type="Curve" id="Curve_vp67o"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.307292, 1), 0.0, 0.0, 0, 0, Vector2(0.84375, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_xef8h")
@@ -37,11 +42,29 @@ id = 1
 position = Vector2(-6.5, 6)
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_0pla8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.04, 0.04)
+scale = Vector2(0.07, 0.07)
 sprite_frames = SubResource("SpriteFrames_p0l83")
-frame_progress = 0.597693
+frame_progress = 0.390852
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, -75)
+emitting = false
+amount = 1
+lifetime = 2.0
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.09
+texture = ExtResource("5_pm824")
+gravity = Vector2(0, -100)
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 0.05
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_vp67o")

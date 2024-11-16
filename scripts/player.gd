@@ -3,8 +3,14 @@ extends CharacterBody2D
 @export var speed = 300.0
 @export var id : int
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var particles: CPUParticles2D = $CPUParticles2D
+
+func _ready() -> void:
+	z_index = -1
 
 func _physics_process(delta: float) -> void:
+	
+	#print(name + " has id " + str(id))
 
 	if id == 1: return #tt sauf le hunter
 
@@ -31,10 +37,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		sprite.stop()
 	
-	if(Input.is_action_pressed(str(id) + "_reveal")):
-		z_index = 2
+	if(Input.is_action_just_pressed(str(id) + "_reveal")):
+		particles.emitting = true
 	else:
-		z_index = -1
+		particles.emitting = false
 	
 	move_and_slide()
 

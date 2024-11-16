@@ -1,13 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://ni026ge8jep5"]
+[gd_scene load_steps=6 format=3 uid="uid://ni026ge8jep5"]
 
 [ext_resource type="Texture2D" uid="uid://dt7br5moencsg" path="res://assets/ground.png" id="1_t2q83"]
+[ext_resource type="PackedScene" uid="uid://dvbdupvebwhq5" path="res://scenes/VacheTest/VacheSpawn.tscn" id="2_uakia"]
+[ext_resource type="PackedScene" uid="uid://bmx4akp13eyvn" path="res://scenes/generator.tscn" id="3_7y5e8"]
+[ext_resource type="PackedScene" uid="uid://hpw6u7lu2wns" path="res://scenes/hunter.tscn" id="4_addal"]
+[ext_resource type="PackedScene" uid="uid://dax08101yn5p7" path="res://scenes/player.tscn" id="5_qulml"]
 
 [node name="main" type="Node2D"]
 
 [node name="Ground" type="Sprite2D" parent="."]
+z_index = -2
 position = Vector2(585, 294)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 texture = ExtResource("1_t2q83")
+
+[node name="VacheSpawn" parent="." instance=ExtResource("2_uakia")]
+position = Vector2(-352, -196)
+
+[node name="generator" parent="." instance=ExtResource("3_7y5e8")]
+position = Vector2(936, 464)
+
+[node name="hunter" parent="." instance=ExtResource("4_addal")]
+position = Vector2(572, 329)
+
+[node name="player" parent="." instance=ExtResource("5_qulml")]
+position = Vector2(180, 229)
+id = 2
+
+[node name="player2" parent="." instance=ExtResource("5_qulml")]
+position = Vector2(862, 197)
+id = 3
+
+[node name="generator2" parent="." instance=ExtResource("3_7y5e8")]
+position = Vector2(68, 543)
+
+[node name="generator3" parent="." instance=ExtResource("3_7y5e8")]
+position = Vector2(-28, -87)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
