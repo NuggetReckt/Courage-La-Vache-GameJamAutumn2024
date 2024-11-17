@@ -12,9 +12,9 @@ func _ready():
 func _process(delta):
 	#print(find_child("Sprite2D").rotation)
 	if sens:
-		find_child("Sprite2D").rotation +=0.01
+		find_child("Sprite2D").rotation += 1*delta
 	else:
-		find_child("Sprite2D").rotation -=0.01
+		find_child("Sprite2D").rotation -= 1*delta
 		
 	if find_child("Sprite2D").rotation>0.3:
 		sens=false
@@ -23,7 +23,7 @@ func _process(delta):
 	
 	if start==true:
 		if find_child("Sprite2D").scale.x+find_child("Sprite2D").scale.y<100:
-			find_child("Sprite2D").scale +=Vector2(0.01, 0.01)
+			find_child("Sprite2D").scale +=Vector2(1*delta, 1*delta)
 		
 	if Input.is_anything_pressed():
 		start = true

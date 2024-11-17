@@ -65,6 +65,7 @@ position = Vector2(377, 864)
 
 [node name="hunter" parent="." instance=ExtResource("5_0ej2x")]
 position = Vector2(1051, 611)
+speed = 225.0
 
 [node name="Ground" type="Sprite2D" parent="."]
 z_index = -3

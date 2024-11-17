@@ -9,7 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	find_child("hunter").black_hole.modulate = Color(1,1,1,0.5)
+	find_child("hunter").black_hole.modulate = Color(1,1,1,0.3)
 	if (Main.generator_charge_count >= 3):
 		var lvlselect: int = randi()%3
 		if (lvlselect==1):

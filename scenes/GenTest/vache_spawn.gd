@@ -21,6 +21,7 @@ func inst():
 	var instanceV = vache.instantiate()
 	if (randi()%2)==1:
 		instanceV.find_child("Sprite2D").flip_h=true
+		instanceV.find_child("AnimatedSprite2D").flip_h=true
 	instanceV.position = Vector2(randi()%1050 + 50,randi()%550 + 50)
 	add_child(instanceV)
 	tab.append(instanceV)

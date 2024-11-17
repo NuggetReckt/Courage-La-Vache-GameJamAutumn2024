@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvldbpbb1lugy"]
+[gd_scene load_steps=12 format=3 uid="uid://cvldbpbb1lugy"]
 
 [ext_resource type="Script" path="res://scenes/GenTest/vache.gd" id="1_gjt35"]
 [ext_resource type="Texture2D" uid="uid://dxohcwvmvimpi" path="res://assets/anims/vache/courage_-1.png" id="1_xp7nb"]
 [ext_resource type="Texture2D" uid="uid://bacyk1jqv7ndn" path="res://assets/mieuuh.png" id="2_y36nx"]
+[ext_resource type="Texture2D" uid="uid://dukhbwte0d6bh" path="res://assets/anims/chew/chew-1.png" id="3_xgc8w"]
+[ext_resource type="Texture2D" uid="uid://baoqeiesewwf4" path="res://assets/anims/chew/Chew-2.png" id="4_y3a83"]
+[ext_resource type="Texture2D" uid="uid://dgf35dt06nc3v" path="res://assets/anims/chew/Chew-3.png" id="5_fd8wm"]
+[ext_resource type="Texture2D" uid="uid://bpsxv6jqeyntq" path="res://assets/anims/chew/Chew-4.png" id="6_saudd"]
+[ext_resource type="Texture2D" uid="uid://c3kvd3f5enhq1" path="res://assets/anims/chew/Chew-5.png" id="7_1hy1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7aai"]
 size = Vector2(141, 97)
@@ -11,12 +16,52 @@ size = Vector2(141, 97)
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.307292, 1), 0.0, 0.0, 0, 0, Vector2(0.84375, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_02a2m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xgc8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y3a83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fd8wm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_saudd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1hy1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_saudd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fd8wm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_saudd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1hy1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_saudd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y3a83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xgc8w")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="Vache" type="Node2D"]
 script = ExtResource("1_gjt35")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.09, 0.09)
-texture = ExtResource("1_xp7nb")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -40,3 +85,11 @@ angle_max = 45.0
 scale_amount_min = 0.05
 scale_amount_max = 0.1
 scale_amount_curve = SubResource("Curve_p48g6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.09, 0.09)
+sprite_frames = SubResource("SpriteFrames_02a2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("1_xp7nb")
