@@ -7,6 +7,8 @@ extends CharacterBody2D
 @onready var death_timer: Timer = $Death_Timer
 @onready var label: Label = $Label
 
+var added_to_moving_player_count:bool
+
 var dead : bool
 
 func _ready() -> void:
@@ -66,6 +68,9 @@ func _physics_process(delta: float) -> void:
 	
 	if input_vector:
 		velocity = input_vector.normalized() * speed
+		if(!added_to_moving_player_count):
+			Main.moving_player_count += 1
+			added_to_moving_player_count = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.y = move_toward(velocity.y, 0, speed)
