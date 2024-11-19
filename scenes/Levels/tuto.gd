@@ -9,7 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	find_child("hunter").black_hole.modulate = Color(1,1,1,0.3)
-	if (Main.moving_player_count > 0 && Main.generator_charge_count >= Main.moving_player_count):
+	if (Main.moving_players.size() > 0 && Main.generator_charge_count >= Main.moving_players.size()):
 		var lvlselect: int = randi()%3
 		if (lvlselect==1):
 			get_tree().change_scene_to_file("res://scenes/Levels/Lvl1.tscn")

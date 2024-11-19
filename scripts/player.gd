@@ -14,6 +14,10 @@ var dead : bool
 func _ready() -> void:
 	z_index = -1
 	dead = false
+	#supr si pas bougé pendant le tuto (?peut être pas ?)
+	if(get_parent().name != "Tuto"):
+		if(!Main.moving_players.has(id)):
+			queue_free()
 
 func _process(delta: float) -> void:
 	if(dead):
@@ -27,6 +31,13 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if(get_parent().name == "Tuto"):
+		
+		if(!added_to_moving_player_count):
+			self.visible = false
+		else:
+			if !self.visible:
+				self.visible = true
+		
 		label.text = "joueur " + str(id-1)
 		match id:
 			2: label.add_theme_color_override("font_color", Color.RED)
@@ -69,7 +80,7 @@ func _physics_process(delta: float) -> void:
 	if input_vector:
 		velocity = input_vector.normalized() * speed
 		if(!added_to_moving_player_count):
-			Main.moving_player_count += 1
+			Main.moving_players.append(id)
 			added_to_moving_player_count = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)

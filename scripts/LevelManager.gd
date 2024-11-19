@@ -16,7 +16,7 @@ func _ready() -> void:
 	is_game_ended = false
 	night = false
 	Main.generator_charge_count = 0
-	Main.players_alive_count = 3
+	Main.players_alive_count = Main.moving_players.size()
 	alien_victory_screen.visible = false
 	cows_victory_screen.visible = false
 	
