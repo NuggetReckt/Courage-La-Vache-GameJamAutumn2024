@@ -27,6 +27,7 @@ func _process(delta):
 		
 	if Input.is_anything_pressed():
 		start = true
-		AudioManager.yooo_sfx.play()
+		if(!AudioManager.yooo_sfx.playing):
+			AudioManager.yooo_sfx.play()
 		await get_tree().create_timer(2).timeout
 		get_tree().change_scene_to_file("res://scenes/Levels/Tuto.tscn")

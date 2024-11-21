@@ -98,7 +98,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		sprite.stop()
 	
-	if(Input.is_action_just_pressed(str(id) + "_reveal")):
+	if(Input.is_action_pressed(str(id) + "_reveal")):
 		particles.emitting = true
 		AudioManager.get_rand_mooh().play()
 	else:

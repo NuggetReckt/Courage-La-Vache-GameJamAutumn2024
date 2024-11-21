@@ -9,7 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (randi()%6000==1):
+	if (randi()%5500==1):
 		find_child("CPUParticles2D").emitting = true
 		if(randi()%2 == 1):
 			AudioManager.get_rand_mooh().play()

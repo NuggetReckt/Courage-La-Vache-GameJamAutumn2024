@@ -47,7 +47,8 @@ func _process(delta: float) -> void:
 			AudioManager.game_theme.stop()
 		if (AudioManager.game_theme_no_intro.playing):
 			AudioManager.game_theme_no_intro.stop()
-		AudioManager.game_end_sfx.play()
+		if(!AudioManager.game_end_sfx.playing):
+			AudioManager.game_end_sfx.play()
 		if (Main.generator_charge_count >= 3):
 			cows_victory_screen.visible = true
 			if (end_timer.is_stopped()):
@@ -83,4 +84,5 @@ func play_music() -> void:
 	AudioManager.game_theme_no_intro.play()
 
 func _on_end_timer_timeout() -> void:
+	Main.moving_players.clear()
 	get_tree().change_scene_to_file("res://scenes/Levels/MainMenu.tscn")

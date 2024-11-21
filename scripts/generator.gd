@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 			var player: Node = area.get_parent()
 		
 			if (Input.is_action_pressed(str(player.getId()) + "_fill")):
-				time_held = time_held + 0.01
+				time_held = time_held + 1 * delta
 				if (time_held >= 2):
 					time_held = 0
 					if (get_current_generator_state() == GENERATOR_STATE.FULL):
