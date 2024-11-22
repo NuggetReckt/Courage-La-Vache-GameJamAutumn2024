@@ -106,7 +106,6 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-
 func die():
 	dead = true
 	death_timer.start()

@@ -7,25 +7,33 @@ extends Node2D
 @onready var cows_victory_screen: Sprite2D = $CowsVictoryScreen
 @onready var end_timer: Timer = $EndTimer
 
+@export var generators : Array[Node2D]
+
 var night : bool
 var is_game_ended: bool
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	day_timer.start()
 	is_game_ended = false
 	night = false
+	
 	Main.generator_charge_count = 0
 	Main.players_alive_count = Main.moving_players.size()
+	
 	alien_victory_screen.visible = false
 	cows_victory_screen.visible = false
+	
+	if(Main.players_alive_count == 1): #On met que 3 gens si 1v1
+		var gen = generators[generators.size() - 1]
+		gen.visible = false
+		generators.erase(gen)
+		
 	
 	if (AudioManager.menu_theme.playing):
 		AudioManager.menu_theme.stop()
 	await get_tree().create_timer(0.5).timeout
 	AudioManager.game_start_sfx.play()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	set_game_ended()
 	

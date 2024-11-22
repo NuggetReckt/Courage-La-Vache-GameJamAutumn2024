@@ -25,8 +25,9 @@ size = Vector2(59, 1119)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cnap8"]
 size = Vector2(1874, 73)
 
-[node name="Lvl3" type="Node2D"]
+[node name="Lvl3" type="Node2D" node_paths=PackedStringArray("generators")]
 script = ExtResource("1_c5fbj")
+generators = [NodePath("generator4")]
 
 [node name="MurVertical" parent="." instance=ExtResource("2_sb3ag")]
 position = Vector2(786, 316)
@@ -137,12 +138,14 @@ wait_time = 2.5
 one_shot = true
 
 [node name="AlienVictoryScreen" type="Sprite2D" parent="."]
+visible = false
 z_index = 4
 position = Vector2(958, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_hguqj")
 
 [node name="CowsVictoryScreen" type="Sprite2D" parent="."]
+visible = false
 z_index = 4
 position = Vector2(958, 540)
 scale = Vector2(0.5, 0.5)
